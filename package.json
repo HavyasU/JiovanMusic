@@ -1,0 +1,24 @@
+{
+  "name": "savanclone",
+  "version": "1.0.0",
+  "description": "this is the unofficial clone of the jiosavan",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "billboard-top-100": "^2.6.5",
+    "child-process": "^1.0.2",
+    "deezer-request": "^1.0.0",
+    "express": "^4.18.2",
+    "express-handlebars": "^7.0.7",
+    "gh": "^2.8.9",
+    "mongoose": "^7.1.1",
+    "nodemon": "^2.0.22",
+    "youtube-music-api": "^1.0.6"
+  }
+}

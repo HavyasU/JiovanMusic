@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@300&family=Playfair+Display&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color:rgb(255, 251, 251);
+    -ms-overflow-style: none; 
+    scrollbar-width: none;  
+}
+*::-webkit-scrollbar {
+    display: none;
+  }
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(51, 48, 48);
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+.h-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Playfair Display', serif;
+    margin-top: 1.5rem;
+}
+
+#m-header {
+    font-size: 3rem;
+    font-family: 'Playfair Display', serif;
+    color: rgb(255, 251, 251);
+}
+
+#s-header {
+    font-size: 2rem;
+    color: rgb(255, 254, 254);
+    margin-top: .7rem;
+}
+
+.inp-container {
+    width:27rem;
+    height:3.2rem;
+    display: flex;
+    background-color: red;
+    margin: 0 auto;
+    margin-top:3rem;
+    box-shadow:0px 0px 40px .2px rgb(126, 220, 223);
+    border-radius:1.5rem;
+    transition-duration: 5ms;
+    margin-bottom: 2rem;
+}
+/* .inp-container :hover{
+    box-shadow:0px 0px 45px 1px rgb(126, 220, 223);
+    transition-duration: 300ms; */
+/* } */
+#s-name {
+    width: 83%;
+    height:100%;
+    border: none;
+    margin-bottom: 2rem;
+    outline: none;
+    background-color: rgb(255, 255, 255);
+    color: rgb(64, 42, 42);
+    font-size: 1.2rem;
+    font-family: 'Playfair Display', serif;
+    padding: 1rem;
+    font-weight: 700;
+    border-radius:1rem;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+#search-btn{
+    width: 17%;
+    height:100%;
+    border: none;
+    background-color: #243763;
+    border-radius:1.1rem;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    cursor:pointer;
+}
+.card-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    grid-row-end:inherit;
+    margin: 0 auto;
+    justify-content: space-around;
+}
+
+.card {
+    width:15rem;
+    height:25rem;
+    background-color: rgb(255, 255, 255);
+    margin: 2rem 2rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 1rem;
+    gap: .5rem;
+}
+
+.img-div {
+    display: flex;
+    width: 100%;
+    height: 15rem;
+    /* background-color: blue; */
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+#img{
+    width: 65%;
+    height: 90%;
+    margin-top:1rem;
+    box-shadow:5px 5px 10px 2px rgb(66, 56, 56);
+
+}
+.d-div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content:start;
+    padding-left:2rem;
+    padding-bottom: 2rem;
+    padding-top: .2rem;
+}
+.song-name{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Playfair Display', serif;
+    overflow: scroll;
+    font-size:.9rem;
+    font-weight: 600;
+    margin:.5rem 0;
+    color: #000000;
+}
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+/* fallback */
+@font-face {
+    font-family: 'Material Symbols Outlined';
+    font-style: normal;
+    font-weight: 500;
+    src: url(https://fonts.gstatic.com/s/materialsymbolsoutlined/v110/kJF1BvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oDMzByHX9rA6RzazHD_dY43zj-jCxv3fzvRNU22ZXGJpEpjC_1n-q_4MrImHCIJIZrDCdHOej.woff2) format('woff2');
+  }
+  
+  .material-symbols-outlined {
+    font-family: 'Material Symbols Outlined';
+    font-weight: normal;
+    font-style: normal;
+    font-size: .5rem;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+    transition: color 0.3s ease;
+    background-color: aliceblue;
+    color: black;
+    border-radius: .2rem;
+    cursor: pointer;
+    margin-left: 1.2rem;
+    position: relative;
+    top: 2px;
+  }
+  .material-symbols-outlined:hover{
+    opacity: 0.8;
+  }
+  .controls{
+    width:100%;
+    display:flex;
+    justify-content: space-evenly;
+    gap: 1rem;
+}
+.audio{
+    outline: none;
+    border: none;
+}
+.hidden{
+    display: none;
+}
+.playicon,.volumeicon,.dicon{
+    color: #000000;
+    font-size:1.5rem;  
+    cursor: pointer;
+}
+
+.suggest-div
+{
+    width: 100%;
+    display:flex;
+    justify-content: space-evenly;
+    margin-top: 2rem;
+}
+.suggest{
+    width: 6rem;
+    height: 2rem;
+    padding: .5rem 1rem;
+    text-align: center;
+    justify-content: center;
+    color: black;
+    border: none;
+    font-size: 1rem;
+    font-weight: 700;
+}
+@media (max-width: 450px) {
+    /* Your CSS rules go here */
+    /* For example: */
+    body {
+        width: 100%;
+        height: 100%;
+        font-size: 16px;
+    }
+    div{
+      width: 100%;
+    }
+    .inp-container {
+        width:15rem;
+        height:3.2rem;
+        display: flex;
+        background-color: red;
+        margin: 0 auto;
+        margin-top:1rem;
+        margin-bottom:1.5rem;
+        box-shadow:0px 0px 40px .2px rgb(126, 220, 223);
+        border-radius:1.5rem;
+        transition-duration: 5ms;
+    }
+    #s-name{
+        font-size: 1rem;
+    }
+    #m-header
+    {
+        font-size: 1.4rem;
+        margin-bottom: 0;
+    }
+    .loader
+    {
+        margin-left:43%;
+    }
+    .n-li{
+        list-style: none;
+        display:flex;
+        gap:3rem;
+    }
+    .n-li a{ 
+        font-size: .9rem;
+    }
+  }
