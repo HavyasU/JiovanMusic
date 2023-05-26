@@ -6,6 +6,9 @@ const app = express();
 const exphbs = require('express-handlebars');
 var hbs = exphbs.create({ /* config */ });
 /* Running  APP.PY */
+try{
+
+
 async function runapi() {
   const { spawn } = require('child_process');
   // Define the command to run the Python program
@@ -27,6 +30,10 @@ async function runapi() {
   });
 }
 runapi()
+}
+catch(err){
+  console.log(err)
+}
 /******************************************************************** */
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
