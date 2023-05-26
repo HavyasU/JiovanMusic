@@ -81,7 +81,7 @@ const createcard = ((index, tdata) => {
 // }, 1000);
 
 let topsongs = async () => {
-    res = await fetch('http://localhost:5000/api/bb')
+    res = await fetch('https://jiovanmusic-production.up.railway.app/api/bb')
     data = await res.json()
     toparray = data.songs
 
