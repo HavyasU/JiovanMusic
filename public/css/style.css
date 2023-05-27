@@ -1,25 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300&family=Playfair+Display&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color:rgb(255, 251, 251);
-    -ms-overflow-style: none; 
-    scrollbar-width: none;  
+    color: rgb(255, 251, 251);
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
+
 *::-webkit-scrollbar {
     display: none;
-  }
+}
+
 body {
     width: 100%;
     height: 100vh;
     background-color: #333;
 }
-*{
+
+* {
     padding: 0;
     margin: 0;
 }
+
 .h-container {
     width: 100%;
     display: flex;
@@ -43,24 +48,26 @@ body {
 }
 
 .inp-container {
-    width:27rem;
-    height:3.2rem;
+    width: 27rem;
+    height: 3.2rem;
     display: flex;
     background-color: red;
     margin: 0 auto;
-    margin-top:3rem;
-    box-shadow:0px 0px 40px .2px rgb(126, 220, 223);
-    border-radius:1.5rem;
+    margin-top: 3rem;
+    box-shadow: 3px 6px .9rem 2px rgb(0, 0, 0);
+    border-radius: 1.5rem;
     transition-duration: 5ms;
     margin-bottom: 2rem;
+    border-radius: 8rem;
 }
+
 /* .inp-container :hover{
     box-shadow:0px 0px 45px 1px rgb(126, 220, 223);
     transition-duration: 300ms; */
 /* } */
 #s-name {
     width: 83%;
-    height:100%;
+    height: 100%;
     border: none;
     margin-bottom: 2rem;
     outline: none;
@@ -70,32 +77,34 @@ body {
     font-family: 'Playfair Display', serif;
     padding: 1rem;
     font-weight: 700;
-    border-radius:1rem;
+    border-radius: 8rem;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 }
-#search-btn{
+
+#search-btn {
     width: 17%;
-    height:100%;
+    height: 100%;
     border: none;
     background-color: #243763;
-    border-radius:1.1rem;
+    border-radius: 8rem;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
-    cursor:pointer;
+    cursor: pointer;
 }
+
 .card-container {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    grid-row-end:inherit;
+    grid-row-end: inherit;
     margin: 0 auto;
     justify-content: space-around;
 }
 
 .card {
-    width:15rem;
-    height:25rem;
+    width: 15rem;
+    height: 25rem;
     background-color: rgb(255, 255, 255);
     margin: 2rem 2rem;
     display: flex;
@@ -113,47 +122,51 @@ body {
     padding-bottom: 10px;
 }
 
-#img{
+#img {
     width: 65%;
     height: 90%;
-    margin-top:1rem;
-    box-shadow:5px 5px 10px 2px rgb(66, 56, 56);
+    margin-top: 1rem;
+    box-shadow: 5px 5px 10px 2px rgb(66, 56, 56);
 
 }
-.d-div{
+
+.d-div {
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content:start;
-    padding-left:2rem;
+    justify-content: start;
+    padding-left: 2rem;
     padding-bottom: 2rem;
     padding-top: .2rem;
 }
-.song-name{
+
+.song-name {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-family: 'Playfair Display', serif;
     overflow: scroll;
-    font-size:.9rem;
+    font-size: .9rem;
     font-weight: 600;
-    margin:.5rem 0;
+    margin: .5rem 0;
     color: #000000;
 }
+
 .material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 48
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48
 }
+
 /* fallback */
 @font-face {
     font-family: 'Material Symbols Outlined';
     font-style: normal;
     font-weight: 500;
     src: url(https://fonts.gstatic.com/s/materialsymbolsoutlined/v110/kJF1BvYX7BgnkSrUwT8OhrdQw4oELdPIeeII9v6oDMzByHX9rA6RzazHD_dY43zj-jCxv3fzvRNU22ZXGJpEpjC_1n-q_4MrImHCIJIZrDCdHOej.woff2) format('woff2');
-  }
-  
-  .material-symbols-outlined {
+}
+
+.material-symbols-outlined {
     font-family: 'Material Symbols Outlined';
     font-weight: normal;
     font-style: normal;
@@ -175,37 +188,44 @@ body {
     margin-left: 1.2rem;
     position: relative;
     top: 2px;
-  }
-  .material-symbols-outlined:hover{
+}
+
+.material-symbols-outlined:hover {
     opacity: 0.8;
-  }
-  .controls{
-    width:100%;
-    display:flex;
+}
+
+.controls {
+    width: 100%;
+    display: flex;
     justify-content: space-evenly;
     gap: 1rem;
 }
-.audio{
+
+.audio {
     outline: none;
     border: none;
 }
-.hidden{
+
+.hidden {
     display: none;
 }
-.playicon,.volumeicon,.dicon{
+
+.playicon,
+.volumeicon,
+.dicon {
     color: #000000;
-    font-size:1.5rem;  
+    font-size: 1.5rem;
     cursor: pointer;
 }
 
-.suggest-div
-{
+.suggest-div {
     width: 100%;
-    display:flex;
+    display: flex;
     justify-content: space-evenly;
     margin-top: 2rem;
 }
-.suggest{
+
+.suggest {
     width: 6rem;
     height: 2rem;
     padding: .5rem 1rem;
@@ -214,51 +234,134 @@ body {
     color: black;
     border: none;
     font-size: 1rem;
-    font-weight: 70
-        ;
+    font-weight: 700;
 }
 
+
+
 @media (max-width: 450px) {
+    * {}
+
     /* Your CSS rules go here */
     /* For example: */
     body {
         width: 100%;
         height: 100%;
         font-size: 16px;
+        background-color: #212121;
     }
-    div{
-      width: 100%;
+
+    div {
+        width: 100%;
     }
+
     .inp-container {
-        width:15rem;
-        height:3.2rem;
+        width: 18rem;
+        height: 3.2rem;
         display: flex;
         background-color: red;
         margin: 0 auto;
-        margin-top:1rem;
-        margin-bottom:1.5rem;
-        box-shadow:0px 0px 40px .2px rgb(126, 220, 223);
-        border-radius:1.5rem;
+        margin-top: 3rem;
+        box-shadow: 3px 6px .9rem 2px rgb(0, 0, 0);
+        border-radius: 1.5rem;
         transition-duration: 5ms;
+        margin-bottom: 2.5rem;
+        border-radius: 8rem;
+        font-size: small;
     }
-    #s-name{
+
+    #s-name {
         font-size: 1rem;
     }
-    #m-header
-    {
-        font-size: 1.4rem;
+
+    #m-header {
+        font-size: 3rem;
         margin-bottom: 0;
     }
-    .loader
-    {
-        margin-left:32%;
+
+    #loader {
+        margin-left: 44%;
     }
-    .n-li{
+
+    .n-nav {
+
+        width: 100%;
+        margin: 0;
+    }
+
+    .n-div {
+        width: 100%;
+        background-color: #b504c2;
+        position: fixed;
+        top: 0;
+        margin-top: 0;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        box-shadow: 1.5px 0px 20px 7px black;
+        padding: .3rem;
+    }
+
+    .n-ul {
         list-style: none;
-        display:flex;
-        gap:3rem;
+        display: flex;
+        margin: 0;
+        padding-left: .5rem;
+        gap: .4rem;
     }
-    .n-li a{ 
-        font-size: .9rem;
+
+    .n-li {
+        font-size: 1.2rem;
+        padding: 4px 3px;
+        margin: .3rem 0;
     }
-  }
+
+    .n-ul a {
+        font-size: 1.2rem;
+        padding: 5px 3px;
+        border-radius: 2px;
+        margin: 2rem 0;
+        text-align: center;
+        border-left: 4px solid rgb(68, 66, 66);
+    }
+  
+
+    
+
+    footer {
+        width: 100%;
+        height: fit-content;
+        opacity: 0.9;
+        position: unset;
+    }
+
+    body {
+        padding-top: 2rem;
+    }
+
+    .footer-container {
+        width: 100%;
+        margin: 0;
+        display: flex;
+        ;
+    }
+
+    .developer-info,
+    .developer-info h3 {
+        width: 100%;
+        font-size: 1rem;
+        text-align: center;
+        margin-right: 10px;
+        margin-bottom: .4rem;
+    }
+
+    .sources {
+        width: 100%;
+        font-size: 1rem;
+        text-align: center;
+        margin: .0rem 0;
+        margin-left: 10px;
+    }
+
+    .card {
+        box-shadow: 0px 0px .9rem 2px rgb(0, 0, 0);
+    }
+}
