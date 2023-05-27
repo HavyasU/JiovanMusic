@@ -5,6 +5,10 @@
 		},
 		{
 			"path": "../../../../Downloads/JioSavanAPI2-main/JioSavanAPI2-main"
+		},
+		{
+			"name": "JiovanMusic",
+			"path": "../../JiovanMusic"
 		}
 	],
 	"settings": {
