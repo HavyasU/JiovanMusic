@@ -317,9 +317,9 @@ body {
 
     .n-ul a {
         font-size: 1.2rem;
-        padding: 5px 3px;
+        padding: 1px 3px;
         border-radius: 2px;
-        margin: .8rem 0;
+        margin: .5rem 0;
         text-align: center;
         border-left: 4px solid rgb(68, 66, 66);
     }
