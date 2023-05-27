@@ -17,7 +17,7 @@
 body {
     width: 100%;
     height: 100vh;
-    background-color: #333;
+    background-color: #212121;
 }
 
 * {
@@ -290,8 +290,9 @@ body {
 
     .n-div {
         width: 100%;
-        background-color: #b504c2;
+        background-color: #b6dbe2;
         position: fixed;
+        color: black;
         top: 0;
         margin-top: 0;
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -318,20 +319,22 @@ body {
         font-size: 1.2rem;
         padding: 1px 3px;
         border-radius: 2px;
-        margin: .5rem 0;
+        margin: .4rem 0;
         text-align: center;
         border-left: 4px solid rgb(68, 66, 66);
+        color: black;
     }
   
 
     
 
     footer {
-        width: 100%;
-        height: fit-content;
+        width: 100%;    
         opacity: 0.9;
         position: unset;
-        margin-top: 10rem;
+        padding: 0;
+        margin: 0;
+        margin-top: 15rem;
     }
 
     body {
@@ -342,25 +345,35 @@ body {
         width: 100%;
         margin: 0;
         display: flex;
+        height: fit-content;
+        padding: 0;
+        margin: 0;
     }
 
     .developer-info,
     .developer-info h3 {
         width: 100%;
+        height:fit-content;
         font-size: 1rem;
         text-align: center;
+        margin-bottom: .1rem;
+        padding: 0;
         margin-right: 10px;
-        margin-bottom: .4rem;
     }
+    .api ,.api h4{
+        padding: 0;
+        margin: 0;
+    }
+
 
     .sources {
         width: 100%;
-        font-size: 1rem;
+        font-size: .8rem;
         text-align: center;
-        margin: .0rem 0;
+        margin: 0;
+        padding: 0;
         margin-left: 10px;
     }
-
     .card {
         box-shadow: 0px 0px .9rem 2px rgb(0, 0, 0);
     }
