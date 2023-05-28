@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Jost:wght@300&family=Playfair+Display&display=swap');
 
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -17,7 +17,7 @@
 body {
     width: 100%;
     height: 100vh;
-    background-color: #white;
+    background-color:white;
 }
 
 * {
@@ -111,16 +111,17 @@ body {
     display: flex;
     flex-direction: column;
     border-radius: .7rem;
-    gap: .5rem;
 }
 
 .img-div {
     display: flex;
     width: 100%;
-    height: 15rem;
+    height: 13rem;
     /* background-color: blue; */
     justify-content: center;
     padding-bottom: 10px;
+    object-fit: cover;
+    margin-bottom: .3rem;
 }
 
 #img {
@@ -128,7 +129,7 @@ body {
     height: 90%;
     margin-top: 1rem;
     box-shadow: 5px 5px 10px 1px rgb(18, 15, 18);
-
+    object-fit:fill;
 }
 
 .d-div {
@@ -137,8 +138,8 @@ body {
     flex-direction: column;
     justify-content: start;
     /* padding-left: 2rem; */
-    padding-bottom: 2rem;
-    padding-top: .2rem;
+    padding-bottom: .5rem;
+    padding-top: .1rem;
 }
 
 .song-name{
@@ -149,6 +150,7 @@ body {
     font-weight: 600;
     margin: .2rem 0;
     color: #000000;
+    padding:0 5px;
 }
 
 .material-symbols-outlined {
@@ -201,7 +203,16 @@ body {
     justify-content: space-evenly;
     gap: 1rem;
 }
-
+.range-div{
+    width: 100%;
+    margin-bottom: .8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#range{
+    align-self: center;
+}
 .audio {
     outline: none;
     border: none;
