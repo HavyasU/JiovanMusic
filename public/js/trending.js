@@ -24,6 +24,10 @@ const fetchdata = async (id) => {
 
 const createcard = ((index, tdata) => {
     let parentdiv = document.getElementsByClassName('card-container')
+    let sname1 = `${tdata.data.results[index].name.split(" ")[0]}`
+    let sname2 = `${tdata.data.results[index].name.split(" ")[1]}`
+    let mname1  =    `${tdata.data.results[index].album.name.split(" ")[0]}`
+    let mname2  =    `${tdata.data.results[index].album.name.split(" ")[2]}`
     parentdiv.innerHTML = " "
     if (tdata.data.results[0]) {
         sartist = tdata.data.results[index].primaryArtists.split(",")[1];
