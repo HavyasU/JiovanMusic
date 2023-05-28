@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wonderful Rate Us Page</title>
+    <style>
+        /* CSS styling for the page */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            box-shadow: 0 0 5px rgba(19, 19, 19, 0.1);
+            border-radius: 5px;
+        }
+
+        h1 {
+            text-align: center;
+            padding-top: 5rem;
+            padding-bottom: 1rem;
+        }
+
+        .rating-stars {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            transform: rotate(180deg);
+        }
+
+        .rating-stars input[type="radio"] {
+            display: none;
+        }
+
+        .rating-stars label {
+            font-size: 70px;
+            color: #ccc;
+            cursor: pointer;
+            transition: color 0.3s;
+            margin-bottom: 20px;
+            transform: rotate(180deg);
+        }
+
+        .rating-stars label:hover,
+        .rating-stars input[type="radio"]:checked~label {
+            color: gold;
+        }
+
+        textarea {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #review-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .review-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+        }
+
+        .review-item:last-child {
+            border-bottom: none;
+        }
+
+        .review-item h3 {
+            margin: 0 0 10px;
+        }
+
+        .review-item p {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Rate Us</h1>
+
+        <input type="text" id="user-name" placeholder="Enter your name">
+
+        <div class="rating-stars">
+            <input type="radio" name="rating" id="star5" value="5" />
+            <label for="star5">&#9733;</label>
+            <input type="radio" name="rating" id="star4" value="4" />
+            <label for="star4">&#9733;</label>
+            <input type="radio" name="rating" id="star3" value="3" />
+            <label for="star3">&#9733;</label>
+            <input type="radio" name="rating" id="star2" value="2" />
+            <label for="star2">&#9733;</label>
+            <input type="radio" name="rating" id="star1" value="1" />
+            <label for="star1">&#9733;</label>
+        </div>
+
+        <textarea id="review-text" placeholder="Write your review"></textarea>
+        <button id="submit-review">Submit</button>
+
+        {{!-- <h2>Reviews</h2> --}}
+        <ul id="review-list"></ul>
+    </div>
+
+    <script>
+        // JavaScript functionality for the page
+        document.getElementById("submit-review").addEventListener("click", function () {
+            var rating = document.querySelector('input[name="rating"]:checked').value;
+            var review = document.getElementById("review-text").value;
+            var userName = document.getElementById("user-name").value;
+
+            if (!rating || review.trim() === "" || userName.trim() === "") {
+                alert("Please provide a rating, review, and user name.");
+                return;
+            }
+
+            var reviewItem = document.createElement("li");
+            reviewItem.classList.add("review-item");
+
+            var ratingHeading = document.createElement("h3");
+            ratingHeading.innerText = "Rating: " + rating;
+
+            var userNameParagraph = document.createElement("p");
+            userNameParagraph.innerText = "User: " + userName;
+
+            var reviewParagraph = document.createElement("p");
+            reviewParagraph.innerText = review;
+
+            reviewItem.appendChild(ratingHeading);
+            reviewItem.appendChild(userNameParagraph);
+            reviewItem.appendChild(reviewParagraph);
+
+            document.getElementById("review-list").appendChild(reviewItem);
+
+            // Clear the form
+            document.querySelector('input[name="rating"]:checked').checked = false;
+            document.getElementById("review-text").value = "";
+
+            // Save rating to localStorage
+            var ratings = JSON.parse(localStorage.getItem("ratings")) || [];
+            var ratingData = {
+                rating: rating,
+                review: review,
+                userName: userName
+            };
+            ratings.push(ratingData);
+            localStorage.setItem("ratings", JSON.stringify(ratings));
+        });
+    </script>
+</body>
+
+</html>
