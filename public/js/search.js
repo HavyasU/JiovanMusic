@@ -23,8 +23,8 @@ const createcard = ((index, tdata) => {
                      <p style="display: none;" >${tdata.data.results[index].downloadUrl[1].link}</p>
             </div> 
             <div style="text-align:center; width:100%;" class="d-div">
-                <h1 class="song-name"> ${sname1} ${(sname2="undefined")?" ":sname2}</h1>
-                <h4 class="song-name"> ${mname1} ${(mname2="undefined")?" ":mname2}</h4>
+                <h2 class="song-name"> ${sname1} ${(sname2=="undefined")?" ":sname2}</h2>
+                <h4 class="song-name"> from ${mname1} ${(mname2=="undefined")?" ":mname2}</h4>
                 <h4 class="song-name">${tdata.data.results[index].primaryArtists.split(",")[0]}</h4>
                 <h4 class="song-name">${sartist ? sartist : " "}</h4>
             </div>`

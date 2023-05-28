@@ -83,7 +83,7 @@ setTimeout(() => {
         playing = false;
     }
 
-}, 2000);
+}, 1000);
 
 const load = (e) =>{
     // // let script = document.createElement('script');
