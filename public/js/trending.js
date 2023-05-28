@@ -44,21 +44,21 @@ const createcard = ((index, tdata) => {
 
 
         div.innerHTML = ` 
-            <div class="img-div">
-                <img src="${tdata.data.results[index].image[1].link}" id="img" alt="imgage">
-            </div>
-            <div class="controls">
-                     <i class="volumeicon fa-solid fa-volume-high" ></i>
-                     <i class="playicon fa-solid fa-play" ></i>
-                     <i class="dicon fa-solid fa-download"></i>
-                     <p style="display: none;" >${tdata.data.results[index].downloadUrl[1].link}</p>
-            </div> 
-            <div class="d-div">
-                <pre class="song-name">Song    :  ${tdata.data.results[index].name.split(" ")[0]} ${tdata.data.results[index].name.split(" ")[1]}</pre>
-                <pre class="song-name">Movie  :  ${tdata.data.results[index].album.name.split(" ")[0]} ${(tdata.data.results[index].album.name.split(" ")[1] == "undefined") ? " " : tdata.data.results[index].album.name.split(" ")[1]}</pre>
-                <pre class="song-name">Singer :  ${tdata.data.results[index].primaryArtists.split(",")[0]}</pre>
-                <pre class="song-name">Singer :  ${sartist ? sartist : "  -"}</pre>
-            </div>`
+        <div class="img-div">
+        <img src="${tdata.data.results[index].image[1].link}" id="img" alt="imgage">
+    </div>
+    <div class="controls">
+             <i class="volumeicon fa-solid fa-volume-high" ></i>
+             <i class="playicon fa-solid fa-play" ></i>
+             <i class="dicon fa-solid fa-download"></i>
+             <p style="display: none;" >${tdata.data.results[index].downloadUrl[1].link}</p>
+    </div> 
+    <div style="text-align:center; width:100%;" class="d-div">
+        <h2 class="song-name"> ${sname1} ${(sname2=="undefined")?" ":sname2}</h2>
+        <h4 class="song-name"> from ${mname1} ${(mname2=="undefined")?" ":mname2}</h4>
+        <h4 class="song-name">${tdata.data.results[index].primaryArtists.split(",")[0]}</h4>
+        <h4 class="song-name">${sartist ? sartist : " "}</h4>
+    </div>`
 
         parentdiv[0].appendChild(div)
     }
