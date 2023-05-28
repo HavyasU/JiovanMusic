@@ -104,7 +104,7 @@ body {
 }
 
 .card {
-    max-width: 15rem;
+    width: 15rem;
     height: 25rem;
     border:2px solid rgb(5, 55, 255);
     margin: 1rem 1rem;
