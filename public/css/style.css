@@ -249,7 +249,7 @@ body {
         width: 100%;
         height: 100%;
         font-size: 16px;
-        background-color: #212121;
+        background-color: #f4dfdf;
     }
 
     div {
@@ -258,12 +258,12 @@ body {
 
     .inp-container {
         width: 18rem;
-        height: 3.2rem;
+        height: 3rem;
         display: flex;
-        background-color: red;
+        background-color: rgb(23, 22, 22);
         margin: 0 auto;
         margin-top: 3rem;
-        box-shadow: 3px 6px .9rem 2px rgb(0, 0, 0);
+        box-shadow: 3px 6px .9rem 2px rgb(36, 36, 36);
         border-radius: 1.5rem;
         transition-duration: 5ms;
         margin-bottom: 2.5rem;
@@ -299,7 +299,7 @@ body {
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         box-shadow: 1.5px 0px 20px 7px black;
         padding: .1rem;
-        padding-left:1.5rem;
+        padding-left:.5rem;
     }
 
     .n-ul {
@@ -307,7 +307,7 @@ body {
         display: flex;
         margin: 0;
         padding-left: .5rem;
-        gap: .4rem;
+        gap: .2rem;
     }
 
     .n-li {
@@ -322,7 +322,7 @@ body {
         border-radius: 2px;
         margin: .4rem 0;
         text-align: center;
-        border-left: 4px solid rgb(68, 66, 66);
+        border-left: 4px solid rgb(142, 140, 140);
         color: black;
     }
   

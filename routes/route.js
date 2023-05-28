@@ -19,6 +19,9 @@ router.get('/search',(req,res)=>{
 router.get('/download',(req,res)=>{
   res.render('download')
 })
+router.get('/RateUs',(req,res)=>{
+  res.render('RateUs')
+})
 router.get('/api/bb', (req, res) => {
   let topday;
   function getLastSaturday(theDate) {
