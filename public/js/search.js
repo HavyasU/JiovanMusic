@@ -5,6 +5,10 @@ let sbtn = document.getElementById('search-btn')
 
 const createcard = ((index, tdata) => {
     if (tdata.data.results[0]) {
+        let sname1 = `${tdata.data.results[index].name.split(" ")[0]}`
+        let sname2 = `${tdata.data.results[index].name.split(" ")[1]}`
+        let mname1  =    `${tdata.data.results[index].album.name.split(" ")[0]}`
+        let mname2  =    `${tdata.data.results[index].album.name.split(" ")[2]}`
         sartist = tdata.data.results[index].primaryArtists.split(",")[1];
         let div = document.createElement('div');
         div.setAttribute("class", "card");
@@ -18,11 +22,11 @@ const createcard = ((index, tdata) => {
                      <i class="dicon fa-solid fa-download"></i>
                      <p style="display: none;" >${tdata.data.results[index].downloadUrl[1].link}</p>
             </div> 
-            <div class="d-div">
-                <pre class="song-name">Song    :  ${tdata.data.results[index].name.split(" ")[0]} ${tdata.data.results[index].name.split(" ")[1]}</pre>
-                <pre class="song-name">Movie  :  ${tdata.data.results[index].album.name.split(" ")[0]} ${(tdata.data.results[index].album.name.split(" ")[1] == "undefined") ? " " : tdata.data.results[index].album.name.split(" ")[1]}</pre>
-                <pre class="song-name">Singer :  ${tdata.data.results[index].primaryArtists.split(",")[0]}</pre>
-                <pre class="song-name">Singer :  ${sartist ? sartist : "  -"}</pre>
+            <div style="text-align:center; width:100%;" class="d-div">
+                <h1 class="song-name"> ${sname1} ${(sname2="undefined")?" ":sname2}</h1>
+                <h4 class="song-name"> ${mname1} ${(mname2="undefined")?" ":mname2}</h4>
+                <h4 class="song-name">${tdata.data.results[index].primaryArtists.split(",")[0]}</h4>
+                <h4 class="song-name">${sartist ? sartist : " "}</h4>
             </div>`
 
         parentdiv[0].appendChild(div)
