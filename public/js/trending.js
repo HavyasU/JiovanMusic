@@ -1,116 +1,271 @@
-let data, response, res, id, index;
-let loadscipt;
-let input = document.getElementById('s-name')
-let searched = false;
-let flink = `https://saavn.me/search/songs?query=${id}&page=1&limit=2`
-const fetchdata = async (id) => {
-    try {
-        response = await fetch(`https://saavn.me/search/songs?query=${id}&page=1&limit=2`)
-    } catch (err) {
-        alert("Failed to Fetch....Please try after some time")
-        console.log("Failed to Fetch....Please try after some time")
-    }
-    data = await response.json();
-    console.log(data)
-    data.data.results = [...data.data.results]
-    data.data.results.forEach((e, index) => {
-        console.log(e)
-        index = index;
-        createcard(index, data);
-    });
-}
+let albumcardcontainer = document.getElementsByClassName('album-card-container')[0];
+let chartcardcontainer = document.getElementsByClassName('album-chart-container')[0];
+//sripts
+let cduration = document.getElementById('c-duration')
+let tduration = document.getElementById('t-duration')
 
+let range = document.getElementById('range');
+let playdiv = document.getElementById('play-div');
+let song = null;
+let slink = "https://aac.saavncdn.com/903/f8ef6c593dd5689cf59ff681c6cc83c6_48.mp4"
 
-
-const createcard = ((index, tdata) => {
-    let parentdiv = document.getElementsByClassName('card-container')
-    let sname1 = `${tdata.data.results[index].name.split(" ")[0]}`
-    let sname2 = `${tdata.data.results[index].name.split(" ")[1]}`
-    let mname1  =    `${tdata.data.results[index].album.name.split(" ")[0]}`
-    let mname2  =    `${tdata.data.results[index].album.name.split(" ")[2]}`
-    parentdiv.innerHTML = " "
-    if (tdata.data.results[0]) {
-        sartist = tdata.data.results[index].primaryArtists.split(",")[1];
-        let div = document.createElement('div');
-        div.setAttribute("class", "card");
-        //     div.innerHTML = `<div class="img-div">
-        //     <img src="${tdata.data.results[index].image[2].link}" id="img" alt="imgage">
-        // </div>
-        // <div class="d-div">
-        //     <div class="controls">
-        //     <audio class="audio" controls src="${tdata.data.results[index].downloadUrl[2].link}"></audio>
-        //     </div>
-        //     <pre id="song-name">Songs  : ${tdata.data.results[index].name}</pre>
-        //     <pre id="song-name">Movie  : ${tdata.data.results[index].album.name}</pre>
-        //     <pre id="song-name">Artist : ${tdata.data.results[index].primaryArtists.split(",")[0]}</pre>
-        //     <pre id="song-name">Artist : ${sartist ? sartist : "  -"}</pre>
-        // </div>`;
-
-
-        div.innerHTML = ` 
-        <div class="img-div">
-        <img src="${tdata.data.results[index].image[1].link}" id="img" alt="imgage">
-    </div>
-    <div class="controls">
-             <i class="volumeicon fa-solid fa-volume-high" ></i>
-             <i class="playicon fa-solid fa-play" ></i>
-             <i class="dicon fa-solid fa-download"></i>
-             <p style="display: none;" >${tdata.data.results[index].downloadUrl[1].link}</p>
-    </div> 
-    <div style="text-align:center; width:100%;" class="d-div">
-        <h2 class="song-name"> ${sname1} ${(sname2=="undefined")?" ":sname2}</h2>
-        <h4 class="song-name"> from ${mname1} ${(mname2=="undefined")?" ":mname2}</h4>
-        <h4 class="song-name">${tdata.data.results[index].primaryArtists.split(",")[0]}</h4>
-        <h4 class="song-name">${sartist ? sartist : " "}</h4>
-    </div>`
-
-        parentdiv[0].appendChild(div)
-    }
-})
-// data.forEach((e)=>{
-//     console.log(e)
-// });
-// setInterval(() => {
-//     if (searched) {
-//         let playbtn = document.getElementsByClassName('playbtn')
-//         playbtn = [...playbtn]
-//         playbtn.forEach((ele) => {
-//             ele.addEventListener("click", (e) => {
-//                 console.log(ele.parentNode.parentNode.previousElementSibling.firstElementChild)
-//             }
-//             )
-//         })
+// let backbtn = document.getElementsByClassName('back-btn')[0];
+// backbtn.addEventListener("click", () => {
+//     pop.classList.toggle('active');
+//     if (song) {
+//         song.pause()
+//         playdiv.firstChild.nextElementSibling.nextElementSibling.firstElementChild.classList.remove("fa-pause");
+//         playdiv.firstChild.nextElementSibling.nextElementSibling.firstElementChild.classList.add("fa-play");
 //     }
-//     console.log("TRY NOW")
-// }, 1000);
-
-let topsongs = async () => {
-    res = await fetch('https://jiovanmusic-production.up.railway.app/api/bb');
-    data = await res.json()
-    toparray = data.songs
-
-    const topfetch = async (t) => {
-        try {
-            response = await fetch(`https://saavn.me/search/songs?query=${t}&page=1&limit=2`)
-            data = await response.json();
-        } catch (err) {
-
-            console.log("Failed to Fetch....Please try after some time")
-        }
-        // console.log(data)
-        createcard(0, data);
-    };
-    toparray.forEach((e) => {
-        topfetch(e)
-    })
-    loadscipt()
-    // topfetch(toparray[1])
+// })
+playdiv.firstChild.nextElementSibling.nextElementSibling.addEventListener("click", () => {
+    play()
+})
+const setsong = (link) => {
+    song = new Audio(link);
+    play();
+    loadrange()
 }
-topsongs()
+const play = () => {
+    if (playdiv.firstChild.nextElementSibling.nextElementSibling.firstElementChild.classList.contains("fa-play")) {
+        playdiv.firstChild.nextElementSibling.nextElementSibling.firstElementChild.classList.remove("fa-play");
+        playdiv.firstChild.nextElementSibling.nextElementSibling.firstElementChild.classList.add("fa-pause");
+        song.play();
+    }
+    // if(playdiv.firstChild.nextElementSibling.nextElementSibling.firstElementChild.classList.contains("fa-pause"))
+    else {
+        playdiv.firstChild.nextElementSibling.nextElementSibling.firstElementChild.classList.remove("fa-pause");
+        playdiv.firstChild.nextElementSibling.nextElementSibling.firstElementChild.classList.add("fa-play");
+        song.pause()
+    }
+}
 
-loadscipt = () => {
-    console.log("ready to load")
-    let script = document.createElement("script")
-    script.setAttribute("src", "js/tplay.js")
-    document.body.appendChild(script)
-};
+function loadrange() {
+    setInterval(() => {
+        range.value = song.currentTime;
+        cduration.innerHTML = Number.parseFloat(`${song.currentTime / 60}`).toFixed(2)
+    }, 500);
+    range.oninput = () => {
+        if (song)
+            song.pause();
+        song.play()
+        song.currentTime = range.value;
+        playdiv.firstChild.nextElementSibling.nextElementSibling.firstElementChild.classList.remove("fa-play");
+        playdiv.firstChild.nextElementSibling.nextElementSibling.firstElementChild.classList.add("fa-pause")
+    }
+}
+
+let albumbox = document.getElementsByClassName('card-album')[0];
+
+
+
+//homepagedata
+let pop = document.getElementsByClassName('popup-div')[0];
+let albumpop = document.getElementsByClassName('album-popup')[0];
+let songcardcontainer = document.getElementsByClassName('song-card-container')[0];
+const homepage = async () => {
+
+    let res = await fetch('https://saavn.me/modules?language=kannada,tulu,hindi,english');
+    let data = await res.json();
+    // console.log(data)
+    loadalbum(data.data);
+    loadchart(data.data)
+}
+
+function popup(songdata) {
+    console.log(songdata)
+    pop.classList.toggle('active');
+    setsong(songdata.downloadUrl[1].link);
+    let playerimg = document.getElementById('player-img');
+    let playerdetails = document.getElementsByClassName('player-details')
+    playerimg.setAttribute("src", `${songdata.image[2].link}`);
+    tduration.innerHTML = Number.parseFloat(`${songdata.duration / 60}`).toFixed(2)
+    range.max = songdata.duration;
+    sname = songdata.name.split(" ");
+    playerdetails[0].firstElementChild.innerHTML = `${sname[0]} ${(sname[1] == undefined) ? " " : sname[1]}`;
+    playerdetails[0].firstElementChild.nextElementSibling.innerHTML = `${songdata.primaryArtists}`;
+    let backbtn = document.getElementsByClassName('back-btn')[0];
+    backbtn.addEventListener("click", () => {
+        pop.classList.remove('active');
+        if (song) {
+            song.pause()
+            playdiv.firstChild.nextElementSibling.nextElementSibling.firstElementChild.classList.remove("fa-pause");
+            playdiv.firstChild.nextElementSibling.nextElementSibling.firstElementChild.classList.add("fa-play");
+        }
+    })
+    playdiv.firstChild.nextElementSibling.nextElementSibling.addEventListener("click", (e) => {
+
+    })
+}
+homepage()
+function addalbum(e) {
+    let li = document.createElement('li');
+    li.setAttribute("class", "card-album");
+    li.setAttribute("onclick", "albumpopup()");
+    li.innerHTML = `
+        <div class="album-img">
+            <img src="${e.image[0].link}" alt="">
+        </div>
+        <div class="a-details">
+            <h1>${e.name}</h1>
+            <h4>${e.songCount} Songs</h4>
+            <p class="hidden">${e.id}</p>
+        </div>`;
+    albumcardcontainer.appendChild(li);
+}
+function addplaylist(e, index, data) {
+    let li = document.createElement('li');
+    li.setAttribute("class", "card-album");
+    li.setAttribute("onclick", "albumpopup()");
+    li.innerHTML = `
+        <div class="album-img">
+            <img src="${e.image[0].link}" alt="">
+        </div>
+        <div class="a-details">
+            <h1>${e.title}</h1>
+            <h4>${e.songCount} Songs</h4>
+            <p class="hidden">${e.id}</p>
+        </div>`;
+    albumcardcontainer.appendChild(li);
+    if ((index + 1) > data.playlists.length - 1) {
+        addevent("playlist")
+    }
+}
+function addchart(e, index, data) {
+    let li = document.createElement('li');
+    li.setAttribute("class", "card-album card-chart");
+    li.setAttribute("onclick", "albumpopup()");
+    li.innerHTML = `
+        <div class="album-img">
+            <img src="${e.image[2].link}" alt="">
+        </div>
+        <div class="a-details">
+            <h1>${e.title}</h1>
+            <h4>${e.songCount} Songs</h4>
+            <p class="hidden">${e.id}</p>
+        </div>`;
+    chartcardcontainer.appendChild(li);
+    if ((index + 1) > data.charts.length - 1) {
+        // console.log("data is "+ data)
+        // console.log(data.charts)
+        addevent("charts",data.charts);
+        // console.log("clicked from passs")
+    }
+}
+let al_bk_btn = document.getElementsByClassName('a-back-btn');
+// let album = document.getElementsByClassName('album-popup');
+function setalbum(pdata) {
+    console.log(pdata)
+    let div = document.createElement('div')
+    div.innerHTML = `
+        <div class="button">
+            <div class="a-back-btn">
+                <i class="fa-solid fa-arrow-left"></i>
+            </div>
+        </div>
+        <div class="a-img-div">
+            <div class="albm-img">
+                <img src="${pdata.data.image[2].link}" alt="">
+            </div>
+            <div class="albm-details">
+                <h1>${pdata.data.name}</h1>
+                <h2>${pdata.data.songCount} Songs</h>
+            </div>
+        </div>
+        <div class="albm-songs">
+        </div>
+ `
+    albumpop.appendChild(div)
+    al_bk_btn[0].addEventListener("click", () => {
+        albumpop.classList.toggle('active');
+    })
+    pdata.data.songs.forEach((e, index) => {
+        let albm_songs = document.getElementsByClassName('albm-songs')[0];
+        let li = document.createElement('li');
+        li.setAttribute("class", "album-song");
+        li.innerHTML = `<div class="song-s-img">
+        <img src="${e.image[2].link}" alt="">
+    </div>
+    <div class="s-details">
+        <h1>${e.name}</h1>
+        <h4>${e.primaryArtists}</h4>
+    </div>`
+        albm_songs.appendChild(li);
+
+        if ((index + 1) > pdata.data.songs.length - 1) {
+            // addevent("what",data,index of items)   //contents
+            addevent("songs", pdata.data.songs, index)
+        }
+    })
+}
+const albumpopup = async (id) => { };
+const albumpopups = async (id) => {
+    albumpop.innerHTML = " ";
+    albumpop.classList.toggle('active');
+    // console.log(id)
+
+    let res = await fetch(`https://saavn.me/playlists?id=${id}`)
+    // let res = await fetch(`https://saavn.me/albums?link=${link}`)
+    let pdata = await res.json();
+    // console.log(pdata)
+    setalbum(pdata);
+}
+function addevent(id, songdata) {
+    if (id == "playlist") {
+        let cardalbum = document.getElementsByClassName('card-album');
+        cardalbum = [...cardalbum];
+        cardalbum.forEach((e, index) => {
+            e.addEventListener("click", () => {
+                albumpopups(e.lastElementChild.lastElementChild.innerHTML)
+            })
+        })
+    }
+    if (id == "songs") {
+        let albumsong = document.getElementsByClassName('album-song');
+        albumsong = [...albumsong];
+        albumsong.forEach((e, index) => {
+            e.addEventListener("click", (ele) => {
+                popup(songdata[index]);
+            })
+        })
+    }
+    if (id == "charts") {
+        
+        // console.log("hello")
+        let albumsong = document.getElementsByClassName('card-chart');
+        albumsong = [...albumsong];
+        albumsong.forEach((e, index) => {
+            // console.log("clicked")
+            e.addEventListener("click", (ele) => {
+                    albumpopups(e.lastElementChild.lastElementChild.innerHTML)
+            })
+        })
+    }
+}
+const loadalbum = (data) => {
+    
+    let dataarray;
+    dataarray = data;
+    data.playlists.forEach((e, index) => {
+        if (e.songCount > 0)
+            addplaylist(e, index, data)
+    })
+    // if (data)
+    // data.albums.forEach((e, index) => {
+    //         console.log(e)
+    //         if (e.songCount > 0)
+    //             addalbum(e)
+    //     })
+}
+const loadchart = (data) => {
+let dataarray;
+    dataarray = data.charts;
+    // console.log(dataarray)
+    dataarray.forEach((e,index)=>{
+        addchart(e, index, data)
+    })
+}
+
+//*/******* */
+
+albmsongcontainer = document.getElementsByClassName('albm-songs')[0];

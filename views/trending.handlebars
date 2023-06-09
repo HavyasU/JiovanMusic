@@ -1,10 +1,216 @@
-<div class="h-container">
-        <h1 id="s-header">Top Trending</h1>
-    </div>
-    <div class="card-container">
-    </div>
-    <div id="p-div">
+{{!-- <div class="h-container">
+    <h1 id="s-header">Top Trending</h1>
+</div>
+<div class="card-container">
+</div>
+<div id="p-div">
 
-    </div>
+</div>
 <div id="loader"></div>
-<script src="js/trending.js" ></script>
+<script src="js/trending.js"></script> --}}
+
+
+<div class="album-head">
+    <h1>Albums</h1>
+</div>
+<ul class="album-card-container" onclick="">
+
+    {{!-- <li class="card-album" onclick="albumpopup()">
+        <div class="album-img">
+            <img src="./image2.jpg" alt="">
+        </div>
+        <div class="a-details">
+            <h1>Song name</h1>
+            <h4>artist name</h4>
+        </div>
+    </li>
+    <li class="card-album">
+        <div class="album-img">
+            <img src="./image2.jpg" alt="">
+        </div>
+        <div class="a-details">
+            <h1>Song name</h1>
+            <h4>artist name</h4>
+        </div>
+    </li>
+    <li class="card-album">
+        <div class="album-img">
+            <img src="./image2.jpg" alt="">
+        </div>
+        <div class="a-details">
+            <h1>Song name</h1>
+            <h4>artist name</h4>
+        </div>
+    </li>
+    <li class="card-album">
+        <div class="album-img">
+            <img src="./image2.jpg" alt="">
+        </div>
+        <div class="a-details">
+            <h1>Song name</h1>
+            <h4>artist name</h4>
+        </div>
+    </li>
+    <li class="card-album">
+        <div class="album-img">
+            <img src="./image2.jpg" alt="">
+        </div>
+        <div class="a-details">
+            <h1>Song name</h1>
+            <h4>artist name</h4>
+        </div>
+    </li>
+    <li class="card-album">
+        <div class="album-img">
+            <img src="./image2.jpg" alt="">
+        </div>
+        <div class="a-details">
+            <h1>Song namsse</h1>
+            <h4>artist name</h4>
+        </div>
+    </li> --}}
+
+
+</ul>
+<div class="album-head">
+    <h1>Charts</h1>
+</div>
+<ul class="album-card-container album-chart-container"onclick="">
+
+    {{!-- <li class="card-album" onclick="albumpopup()">
+        <div class="album-img">
+            <img src="./image2.jpg" alt="">
+        </div>
+        <div class="a-details">
+            <h1>Song name</h1>
+            <h4>artist name</h4>
+        </div>
+    </li>
+    <li class="card-album">
+        <div class="album-img">
+            <img src="./image2.jpg" alt="">
+        </div>
+        <div class="a-details">
+            <h1>Song name</h1>
+            <h4>artist name</h4>
+        </div>
+    </li>
+    <li class="card-album">
+        <div class="album-img">
+            <img src="./image2.jpg" alt="">
+        </div>
+        <div class="a-details">
+            <h1>Song name</h1>
+            <h4>artist name</h4>
+        </div>
+    </li>
+    <li class="card-album">
+        <div class="album-img">
+            <img src="./image2.jpg" alt="">
+        </div>
+        <div class="a-details">
+            <h1>Song name</h1>
+            <h4>artist name</h4>
+        </div>
+    </li>
+    <li class="card-album">
+        <div class="album-img">
+            <img src="./image2.jpg" alt="">
+        </div>
+        <div class="a-details">
+            <h1>Song name</h1>
+            <h4>artist name</h4>
+        </div>
+    </li>
+    <li class="card-album">
+        <div class="album-img">
+            <img src="./image2.jpg" alt="">
+        </div>
+        <div class="a-details">
+            <h1>Song namsse</h1>
+            <h4>artist name</h4>
+        </div>
+    </li> --}}
+
+
+</ul>
+
+<div class="song-head">
+    <h1>Songs</h1>
+</div>
+<ul class="song-card-container" >
+    
+</ul>
+<div class="popup-div">
+    <div class="player">
+        <div class="u-btn">
+            <div class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i>
+            </div>
+        </div>
+        <div class="player-img">
+            <div class="img-div">
+                <img src="./image2.jpg" alt="image" id="player-img">
+            </div>
+        </div>
+        <div class="player-details">
+            <h1>Onde Usiranthe</h1>
+            <h3>Rajesh Krishnan</h3>
+            <!-- <h3>Vijay Preakash</h3> -->
+        </div>
+        <div class="controls">
+            <div class="input-range">
+                <audio src="https://aac.saavncdn.com/903/f8ef6c593dd5689cf59ff681c6cc83c6_48.mp4"
+                    style="display: block;"></audio>
+                <input type="range" name="" id="range" value="0">
+            </div>
+            <div class="duration">
+                <p id="c-duration">00.00</p>
+                <p id="t-duration">00.00</p>
+            </div>
+            <div class="player-btn" id="play-div">
+                <div class="play-btn hidden"><i class="fa-solid fa-backward "></i></div>
+                <div class="play-btn" id="play-btn"><i class="fa-solid fa-2xl fa-play"></i></div>
+                <div class="play-btn hidden"><i class="fa-solid fa-forward"></i></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="album-popup">
+    <!-- <div class="button">
+            <div class="a-back-btn">
+                <i class="fa-solid fa-arrow-left"></i>
+            </div>
+        </div>
+        <div class="a-img-div">
+            <div class="albm-img">
+                <img src="./image2.jpg" alt="">
+            </div>
+            <div class="albm-details">
+                <h1>Albumddd Name</h1>
+                <h2>Movie Name</h1>
+            </div>
+        </div>
+        <div class="albm-songs"> -->
+    <!-- <li class="album-song" onclick="popup()">
+                    <div class="song-s-img">
+                        <img src="./image2.jpg" alt="">
+                    </div>
+                    <div class="s-details">
+                        <h1>Song name</h1>
+                        <h4>artists name</h4>
+                    </div>
+                </li>
+                <li class="album-song" onclick="">
+                    <div class="song-s-img">
+                        <img src="./image2.jpg" alt="">
+                    </div>
+                    <div class="s-details">
+                        <h1>Song name</h1>
+                        <h4>artist name</h4>
+                    </div>
+                </li> -->
+    <!-- </div> -->
+</div>
+<script src="js/trending.js"></script>
+<script src="js/trendingsong.js"></script>

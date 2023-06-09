@@ -113,16 +113,17 @@ body {
     border-radius: .7rem;
 }
 
-.img-div {
+/* .img-div {
     display: flex;
     width: 100%;
     height: 13rem;
-    /* background-color: blue; */
+    /* background-color: blue; 
     justify-content: center;
     padding-bottom: 10px;
     object-fit: cover;
     margin-bottom: .3rem;
 }
+ */
 
 #img {
     width: 65%;
@@ -200,6 +201,7 @@ body {
 .controls {
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
     gap: 1rem;
 }
@@ -250,145 +252,3 @@ body {
 }
 
 
-
-@media (max-width: 450px) {
-    * {}
-
-    /* Your CSS rules go here */
-    /* For example: */
-    body {
-        width: 100%;
-        height: 100%;
-        font-size: 16px;
-        background-color: #f4dfdf;
-    }
-
-    div {
-        width: 100%;
-    }
-
-    .inp-container {
-        width: 18rem;
-        height: 3rem;
-        display: flex;
-        background-color: rgb(23, 22, 22);
-        margin: 0 auto;
-        margin-top: 3rem;
-        box-shadow: 3px 6px .9rem 2px rgb(36, 36, 36);
-        border-radius: 1.5rem;
-        transition-duration: 5ms;
-        margin-bottom: 2.5rem;
-        border-radius: 8rem;
-        font-size: small;
-    }
-
-    #s-name {
-        font-size: 1rem;
-    }
-
-    #m-header {
-        font-size: 3rem;
-        margin-bottom: 0;
-    }
-
-    #loader {
-        margin-left: 42%;
-    }
-
-    .n-nav {
-        width: 100%;
-        margin: 0;
-    }
-
-    .n-div {
-        width: 100%;
-        background-color: #b6dbe2;
-        position: fixed;
-        color: black;
-        top: 0;
-        margin-top: 0;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        box-shadow: 1.5px 0px 20px 7px black;
-        padding: .1rem;
-        padding-left:.5rem;
-    }
-
-    .n-ul {
-        list-style: none;
-        display: flex;
-        margin: 0;
-        padding-left: .5rem;
-        gap: .2rem;
-    }
-
-    .n-li {
-        font-size: 1.2rem;
-        padding: 4px 3px;
-        margin: .3rem 0;
-    }
-
-    .n-ul a {
-        font-size: 1.2rem;
-        padding: 1px 3px;
-        border-radius: 2px;
-        margin: .4rem 0;
-        text-align: center;
-        border-left: 4px solid rgb(142, 140, 140);
-        color: black;
-    }
-  
-
-    
-
-    footer {
-        width: 100%;    
-        opacity: 0.9;
-        position: unset;
-        padding: 0;
-        margin: 0;
-        margin-top: 15rem;
-    }
-
-    body {
-        padding-top: 3.5rem;
-    }
-
-    .footer-container {
-        width: 100%;
-        margin: 0;
-        display: flex;
-        height: fit-content;
-        padding: 0;
-        margin: 0;
-    }
-
-    .developer-info,
-    .developer-info h3 {
-        width: 100%;
-        height:fit-content;
-        font-size: 1rem;
-        text-align: center;
-        margin-bottom: .1rem;
-        padding: 0;
-        margin-right: 10px;
-    }
-    .api ,.api h4{
-        padding: 0;
-        margin: 0;
-    }
-
-
-    .sources {
-        width: 100%;
-        font-size: .8rem;
-        text-align: center;
-        margin: 0;
-        padding: 0;
-        margin-left: 10px;
-    }
-    .card {
-        /* box-shadow: 0px 0px 1.5rem 1px rgb(91, 89, 89); */
-        margin-bottom: 0;
-        padding-bottom: 0;
-    }
-}
