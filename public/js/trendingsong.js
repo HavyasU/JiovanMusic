@@ -1,23 +1,27 @@
+let load = document.getElementsByClassName('load')[0];
 let songdataarray = [];
 const addsongevent=()=>{
     let cards = document.getElementsByClassName('card-song');
     cards = [...cards];
     console.log(cards)
     cards.forEach((e,i)=>{
+        console.log("events")
         e.addEventListener("click",()=>{
+            console.log("clixked")
             popup(songdataarray[i]);
         })
     })
 }
 const loadbb = async () => {
-    let res = await fetch('https://jiovanmusic-production.up.railway.app/api/bb')
-    // let res = await fetch('http://localhost:5000/api/bb');
+    // let res = await fetch('https://jiovanmusic-production.up.railway.app/api/bb')
+    let res = await fetch('http://localhost:5000/api/bb');
     let data = await res.json();
     await data.songs.forEach(async(e) => {
         fetchdata(e)
     });
     setTimeout(()=>{
         addsongevent()
+        load.classList.toggle('hide')
     },1000)
     
 }
@@ -49,14 +53,4 @@ const fetchdata = async (id) => {
     {
         // console.log(data.data.results[0])
             createcard(data.data.results[0]);
-            
-    // data.data.results[0]
-
-    // if (data.data.results)
-    //     data.data.results = [...data.data.results]
-    // data.data.results[0].forEach((e)=>{
-    //    console.log(e)
-    // })
-    //    console.log(data.data.results)
-    }
-}
+}}

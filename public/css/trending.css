@@ -275,10 +275,10 @@ body {
     align-items: center;
     justify-content: center;
     text-align: start;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: rgb(0, 0, 0);
     font-size: 20px;
-    margin-top: 3rem;
+    margin-top: 2rem;
     padding-left: 1rem;
     margin-bottom: 1rem;
 }

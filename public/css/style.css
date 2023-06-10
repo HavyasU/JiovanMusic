@@ -47,51 +47,40 @@ body {
     margin-top: .7rem;
 }
 
-.inp-container {
-    width: 27rem;
-    height: 3.2rem;
-    display: flex;
-    background-color: red;
-    margin: 0 auto;
-    margin-top: 3rem;
-    box-shadow: 3px 6px .9rem 2px rgb(0, 0, 0);
-    border-radius: 1.5rem;
-    transition-duration: 5ms;
-    margin-bottom: 2rem;
-    border-radius: 8rem;
-    color: aliceblue;
-}
 
 /* .inp-container :hover{
     box-shadow:0px 0px 45px 1px rgb(126, 220, 223);
     transition-duration: 300ms; */
 /* } */
-#s-name {
-    width: 83%;
-    height: 100%;
-    border: none;
-    margin-bottom: 2rem;
-    outline: none;
-    background-color: rgb(255, 255, 255);
-    color: rgb(64, 42, 42);
-    font-size: 1.2rem;
-    font-family: 'Playfair Display', serif;
-    padding: 1rem;
-    font-weight: 700;
-    border-radius: 8rem;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-}
 
-#search-btn {
-    width: 17%;
+.inp-container {
+    width:30rem;
+    height: 3rem;
+    display: flex;
+    position:relative;
+    left: 50%;
+    transform:translate(-50%);
+    margin: 5rem 0;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow:0 10px 20px  rgb(112, 111, 111);
+}
+.inp-container input{
+    width: 90%;
     height: 100%;
+    outline: none;
     border: none;
-    background-color: #243763;
-    border-radius: 8rem;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-    cursor: pointer;
+    padding: 0 7px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.2rem;
+}
+.inp-container button{
+    width: 10%;
+    height: 100%;
+    outline: none;
+    border: none;
+    padding: 0 5px;
+    background-color: #030303;
 }
 
 .card-container {
@@ -251,4 +240,16 @@ body {
     font-weight: 700;
 }
 
+#s-songs{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#s-songs .card-song{
+    width: 60%;
+}
+#s-songs div:first-child{
+    margin: auto 1rem;
+}
 

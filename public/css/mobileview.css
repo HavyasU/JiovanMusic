@@ -20,20 +20,15 @@
     }
 
     .inp-container {
-        width: 18rem;
-        height: 3rem;
-        display: flex;
-        background-color: rgb(23, 22, 22);
-        margin: 0 auto;
-        margin-top: 3rem;
-        box-shadow: 3px 6px .9rem 2px rgb(36, 36, 36);
-        border-radius: 1.5rem;
-        transition-duration: 5ms;
-        margin-bottom: 2.5rem;
-        border-radius: 8rem;
-        font-size: small;
+      width: 90%;
+      box-shadow: 0px 8px 15px grey;
     }
-
+    .inp-container input{
+        width: 85%;
+      }
+      .inp-container button{
+        width: 15%;
+      }
     #s-name {
         font-size: 1rem;
     }
@@ -186,10 +181,10 @@
             margin: .5rem auto;
         }
         .albm-details h1{
-            font-size: 1.6rem;
+            font-size: 1rem;
         }
         .albm-details h2{
-            font-size: 1.3rem;
+            font-size: .8rem;
         }
         .album-song{
             width: 90%;
@@ -253,10 +248,10 @@
             overflow: scroll;
         }
         .card-song .s-details h1{
-            font-size: 1.5rem;
+            font-size: 1.3rem;
         }
         .card-song .s-details h4{
-            font-size: 1rem;
+            font-size: .8rem;
         }
         .card-song .song-s-img img{
             margin: auto;
@@ -272,5 +267,27 @@
         }
         .social-links a i{
             color: white;
+        }
+        #s-songs{
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #s-songs .card-song{
+            width: 85%;
+        }
+        #s-songs .card-song {
+            margin: .5rem .5rem;
+        }
+        #s-songs .card-song .s-details{
+            margin: auto .5rem;
+        }
+        .s-songs .card-song h1{
+            font-size: .3rem;
+        }
+        .s-song-details h4{
+            font-size: .5rem;
         }
     }
