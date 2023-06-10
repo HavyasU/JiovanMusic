@@ -51,8 +51,8 @@
         margin: 0;
         padding: 0;
         display: flex;
-        justify-content: center;
-        padding-right: 20px;
+        justify-content: last;
+        padding-right: 3rem;
         gap: 2px;
     }
 
@@ -72,7 +72,8 @@
         padding: 0;
         width: 50px;
         height: 50px;
-        margin-right: 40px;
+        position: absolute;
+        left: 1rem;
     }
 
     .n-ul a {
@@ -142,7 +143,7 @@
 
     .album-card-container {
         width: 100%;
-        background-color: rgb(193, 193, 198);
+        background-color: rgb(255, 255, 255);
         display: grid;
         grid-template: auto auto;
         justify-content: start;
@@ -229,12 +230,13 @@
             top: 1;
             width: 100vw;
             height: 100vh;
+            overflow: hidden;
             /* display: block; */
         }
         .player
         {
-            width: 88%;
-            height: 92vh;
+            width: 85%;
+            height: 89vh;
         }
         .back-btn{
             margin: 0;
@@ -289,5 +291,8 @@
         }
         .s-song-details h4{
             font-size: .5rem;
+        }
+        .player-btn{
+            margin: 0 auto;
         }
     }

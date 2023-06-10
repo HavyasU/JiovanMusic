@@ -65,7 +65,7 @@ function popup(songdata) {
         }
     })
     playdiv.firstChild.nextElementSibling.nextElementSibling.addEventListener("click", (e) => {
-
+        play();
     })
 }
 
