@@ -1,5 +1,5 @@
 let song;
-let parentdiv = document.getElementsByClassName('card-container')
+let parentdiv = document.getElementsByClassName('album-card-container')
 let input = document.getElementById('s-name')
 let sbtn = document.getElementById('search-btn')
 

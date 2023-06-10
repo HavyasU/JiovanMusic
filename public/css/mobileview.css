@@ -229,6 +229,10 @@
             margin: .3erm auto;
             padding: 0;
         }
+        .popup-div{
+            width: 100vw;
+            height: 100vh;
+        }
         .player
         {
             width: 90%;
