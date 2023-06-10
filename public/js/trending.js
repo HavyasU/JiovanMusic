@@ -188,7 +188,7 @@ function setalbum(pdata) {
     </div>
     <div class="s-details">
         <h1>${e.name}</h1>
-        <h4>${e.primaryArtists}</h4>
+        <h4>${e.primaryArtists}</h4> 
     </div>`
         albm_songs.appendChild(li);
 
