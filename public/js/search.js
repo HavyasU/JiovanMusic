@@ -43,6 +43,9 @@ const setsong = (link) => {
     play();
     loadrange()
 }
+playdiv.firstChild.nextElementSibling.nextElementSibling.addEventListener("click", (e) => {
+    play();
+})
 function popup(songdata) {
     console.log(songdata)
     pop.classList.toggle('active');
@@ -64,9 +67,7 @@ function popup(songdata) {
             playdiv.firstChild.nextElementSibling.nextElementSibling.firstElementChild.classList.add("fa-play");
         }
     })
-    playdiv.firstChild.nextElementSibling.nextElementSibling.addEventListener("click", (e) => {
-        play();
-    })
+    
 }
 
 const addsearchevent=()=>{

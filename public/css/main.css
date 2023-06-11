@@ -302,28 +302,36 @@ footer {
  
  .loader-square:nth-of-type(1) {
   animation-delay: -1.4285714286s;
+  background-color: #e3eaf1;
  }
  
  .loader-square:nth-of-type(2) {
   animation-delay: -2.8571428571s;
+  background-color: aquamarine;
  }
  
  .loader-square:nth-of-type(3) {
   animation-delay: -4.2857142857s;
+  background-color: cadetblue;
  }
  
  .loader-square:nth-of-type(4) {
   animation-delay: -5.7142857143s;
+  background-color: chocolate;
  }
  
  .loader-square:nth-of-type(5) {
   animation-delay: -7.1428571429s;
+  background-color: blueviolet;
  }
  
  .loader-square:nth-of-type(6) {
   animation-delay: -8.5714285714s;
+  /* background-color: color-mix(in rgb, rgb(42, 102, 97) 15%, rgb(78, 78, 236) 10%); */
+  background-color: chartreuse;
  }
  
  .loader-square:nth-of-type(7) {
   animation-delay: -10s;
+  background-color: burlywood;
  }
