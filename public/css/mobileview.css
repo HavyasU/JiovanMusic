@@ -278,6 +278,7 @@
             justify-content: center;
             align-items: center;
         }
+
         #s-songs .card-song{
             width: 85%;
         }
@@ -296,4 +297,11 @@
         .player-btn{
             margin: 1rem auto;
         }
-    }
+        .album-head,.song-head{
+            padding: 0;
+        }
+        .album-head h1 ,.song-head h1{
+            font-size:2rem;
+            padding-left: 2rem;
+        }
+        }

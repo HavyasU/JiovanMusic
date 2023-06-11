@@ -213,7 +213,7 @@ body {
     display: flex;
     background: linear-gradient(63deg, rgb(65, 88, 208) 0%, rgb(200, 80, 192) 46%, rgb(255, 204, 112) 100%);
     list-style: none;
-    margin: .6rem .4rem;
+    margin: .6rem 1rem;
     border-radius: 10px;
     box-shadow: 0px 8px 20px rgb(127, 122, 122);
     border: 2px solid white;
@@ -277,10 +277,10 @@ body {
     text-align: start;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: rgb(0, 0, 0);
-    font-size: 20px;
-    margin-top: 2rem;
-    padding-left: 1rem;
-    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    margin-top: 3rem;
+    padding-left: 24rem;
+
 }
 
 .album-card-container {
@@ -289,7 +289,6 @@ body {
     grid-template-columns: auto auto auto auto;
     margin: 0 auto;
     justify-content: center; 
-    background-color:#fff;
 }
 
 .card-album {
@@ -420,7 +419,7 @@ body {
     display: flex;
     background-color: rgb(81, 129, 243);
     list-style: none;
-    margin: .6rem .4rem;
+    margin: .6rem 1rem;
     border-radius: 8px;
     box-shadow: 0px 8px 20px rgb(127, 122, 122);
     border: 2px solid white;
@@ -474,3 +473,9 @@ body {
     /* display: flex; */
     justify-content: center;
 }
+.n-ul img{
+    margin: 0;
+    position: absolute;
+    left: 3rem;
+}
+
