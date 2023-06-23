@@ -81,6 +81,7 @@ body {
     border: none;
     padding: 0 5px;
     background-color: #030303;
+    cursor: pointer;
 }
 
 .card-container {

@@ -13,7 +13,7 @@ const addsongevent=()=>{
     })
 }
 const loadbb = async () => {
-    let res = await fetch('https://jiovanmusic-production.up.railway.app/api/bb')
+    let res = await fetch('http://jiovanmusic-production.up.railway.app/api/bb')
     // let res = await fetch('http://localhost:5000/api/bb');
     let data = await res.json();
     await data.songs.forEach(async(e) => {

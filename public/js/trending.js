@@ -3,7 +3,7 @@ let chartcardcontainer = document.getElementsByClassName('album-chart-container'
 //sripts
 let cduration = document.getElementById('c-duration')
 let tduration = document.getElementById('t-duration')
-
+let playindex;
 let range = document.getElementById('range');
 let playdiv = document.getElementById('play-div');
 let song = null;
@@ -18,6 +18,74 @@ let slink = "https://aac.saavncdn.com/903/f8ef6c593dd5689cf59ff681c6cc83c6_48.mp
 //         playdiv.firstChild.nextElementSibling.nextElementSibling.firstElementChild.classList.add("fa-play");
 //     }
 // })
+
+const popupfornpbtn=(songdata)=>{
+    setsong(songdata.downloadUrl[1].link);
+    let playerimg = document.getElementById('player-img');
+    let playerdetails = document.getElementsByClassName('player-details')
+    playerimg.setAttribute("src", `${songdata.image[2].link}`);
+    tduration.innerHTML = Number.parseFloat(`${songdata.duration / 60}`).toFixed(2)
+    range.max = songdata.duration;
+    sname = songdata.name.split(" ");
+    playerdetails[0].firstElementChild.innerHTML = `${sname[0]} ${(sname[1] == undefined) ? " " : sname[1]}`;
+    playerdetails[0].firstElementChild.nextElementSibling.innerHTML = `${songdata.primaryArtists}`;
+    let backbtn = document.getElementsByClassName('back-btn')[0];
+    // backbtn.addEventListener("click", () => {
+    //     pop.classList.remove('active');
+    //     if (song) {
+    //         song.pause()
+    //         playdiv.firstChild.nextElementSibling.nextElementSibling.firstElementChild.classList.remove("fa-pause");
+    //         playdiv.firstChild.nextElementSibling.nextElementSibling.firstElementChild.classList.add("fa-play");
+    //     }
+    // })
+    playdiv.firstChild.nextElementSibling.nextElementSibling.addEventListener("click", (e) => {
+        
+    })
+}
+let prebtn = document.getElementsByClassName('prebtn');
+prebtn = [...prebtn];
+let nextbtn = document.getElementsByClassName('nextbtn');
+nextbtn = [...nextbtn];
+const addbtnevents = ()=>
+{   
+    nextbtn.forEach((e)=>{
+        e.addEventListener("click",()=>{
+            if (song)
+            song.pause();
+            play();
+            if(playindex == songdataarray.length-1)
+            {
+                popupfornpbtn(songdataarray[0]);
+                playindex = 0;
+            }
+            else
+            {
+            popupfornpbtn(songdataarray[playindex+1]);
+            playindex = playindex+1;
+            console.log(playindex)
+            }
+    })
+    });
+    prebtn.forEach((e)=>{
+        e.addEventListener("click",()=>{
+            if (song)
+            song.pause();
+            play();
+            if(playindex == 0)
+            {
+                popupfornpbtn(songdataarray[songdataarray.length-1]);
+                playindex = songdataarray.length-1;
+            }
+            else
+            {
+            popupfornpbtn(songdataarray[playindex-1]);
+            playindex = playindex-1;
+            console.log(playindex)
+            }
+    })
+    });
+}
+addbtnevents();
 playdiv.firstChild.nextElementSibling.nextElementSibling.addEventListener("click", () => {
     play()
 })

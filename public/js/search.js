@@ -1,4 +1,4 @@
-let song;
+let song,playindex;
 let cduration = document.getElementById('c-duration')
 let tduration = document.getElementById('t-duration')
 
@@ -15,6 +15,7 @@ const play = () => {
         playdiv.firstChild.nextElementSibling.nextElementSibling.firstElementChild.classList.add("fa-pause");
         song.play();
     }
+
     // if(playdiv.firstChild.nextElementSibling.nextElementSibling.firstElementChild.classList.contains("fa-pause"))
     else {
         playdiv.firstChild.nextElementSibling.nextElementSibling.firstElementChild.classList.remove("fa-pause");
@@ -37,7 +38,29 @@ function loadrange() {
         playdiv.firstChild.nextElementSibling.nextElementSibling.firstElementChild.classList.add("fa-pause")
     }
 }
-
+const popupfornpbtn=(songdata)=>{
+        setsong(songdata.downloadUrl[1].link);
+        let playerimg = document.getElementById('player-img');
+        let playerdetails = document.getElementsByClassName('player-details')
+        playerimg.setAttribute("src", `${songdata.image[2].link}`);
+        tduration.innerHTML = Number.parseFloat(`${songdata.duration / 60}`).toFixed(2)
+        range.max = songdata.duration;
+        sname = songdata.name.split(" ");
+        playerdetails[0].firstElementChild.innerHTML = `${sname[0]} ${(sname[1] == undefined) ? " " : sname[1]}`;
+        playerdetails[0].firstElementChild.nextElementSibling.innerHTML = `${songdata.primaryArtists}`;
+        let backbtn = document.getElementsByClassName('back-btn')[0];
+        // backbtn.addEventListener("click", () => {
+        //     pop.classList.remove('active');
+        //     if (song) {
+        //         song.pause()
+        //         playdiv.firstChild.nextElementSibling.nextElementSibling.firstElementChild.classList.remove("fa-pause");
+        //         playdiv.firstChild.nextElementSibling.nextElementSibling.firstElementChild.classList.add("fa-play");
+        //     }
+        // })
+        playdiv.firstChild.nextElementSibling.nextElementSibling.addEventListener("click", (e) => {
+            
+        })
+    }
 const setsong = (link) => {
     song = new Audio(link);
     play();
@@ -47,7 +70,6 @@ playdiv.firstChild.nextElementSibling.nextElementSibling.addEventListener("click
     play();
 })
 function popup(songdata) {
-    console.log(songdata)
     pop.classList.toggle('active');
     setsong(songdata.downloadUrl[1].link);
     let playerimg = document.getElementById('player-img');
@@ -77,6 +99,7 @@ const addsearchevent=()=>{
     cards.forEach((e,i)=>{
         e.addEventListener("click",()=>{
             popup(songdataarray[i]);
+            playindex = i;
         })
     })
 }
@@ -124,5 +147,55 @@ if (input) {
         }
     })
 }
-
-
+sbtn.addEventListener("click",()=>{
+    parentdiv.innerHTML = ` `;
+    songdataarray.length=0;
+    if (song)
+        song.pause();
+    id = input.value;
+    fetchdata(id);
+})
+let prebtn = document.getElementsByClassName('prebtn');
+prebtn = [...prebtn];
+let nextbtn = document.getElementsByClassName('nextbtn');
+nextbtn = [...nextbtn];
+const addbtnevents = ()=>
+{   
+    nextbtn.forEach((e)=>{
+        e.addEventListener("click",()=>{
+            if (song)
+            song.pause();
+            play();
+            if(playindex == songdataarray.length-1)
+            {
+                popupfornpbtn(songdataarray[0]);
+                playindex = 0;
+            }
+            else
+            {
+            popupfornpbtn(songdataarray[playindex+1]);
+            playindex = playindex+1;
+            console.log(playindex)
+            }
+    })
+    });
+    prebtn.forEach((e)=>{
+        e.addEventListener("click",()=>{
+            if (song)
+            song.pause();
+            play();
+            if(playindex == 0)
+            {
+                popupfornpbtn(songdataarray[songdataarray.length-1]);
+                playindex = songdataarray.length-1;
+            }
+            else
+            {
+            popupfornpbtn(songdataarray[playindex-1]);
+            playindex = playindex-1;
+            console.log(playindex)
+            }
+    })
+    });
+}
+addbtnevents();
