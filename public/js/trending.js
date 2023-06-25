@@ -133,7 +133,7 @@ let albumpop = document.getElementsByClassName('album-popup')[0];
 let songcardcontainer = document.getElementsByClassName('song-card-container')[0];
 const homepage = async () => {
 
-    let res = await fetch('https://saavn.me/modules?language=kannada,tulu,hindi,english');
+    let res = await fetch('https://saavn.me/modules?language=kannada,tulu,hindi,english,tamil,telugu');
     let data = await res.json();
     // console.log(data)
     loadalbum(data.data);

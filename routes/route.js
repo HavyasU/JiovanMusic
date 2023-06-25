@@ -2,10 +2,11 @@ const express = require('express');
 const port = process.env.PORT || 3000;
 const path = require('path')
 const app = express();
+// const mongoose = require('mongoose');
 const router = express.Router()
 // const express = require('express');
 const { getChart } = require('billboard-top-100');
-
+const mongoose = require('mongoose')
 // app.use(express.static(path.join(__dirname, 'static')))
 // app.use(express.static(path.join(__dirname,'public')))
 router.get('/',(req,res)=>{
@@ -53,6 +54,7 @@ router.get('/api/bb', (req, res) => {
     res.send({ songs });
   });
   });
+  
   
 module.exports = router;
 

@@ -7,36 +7,75 @@
     <title>Wonderful Rate Us Page</title>
     <style>
         /* CSS styling for the page */
-        body {
+        * {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
         }
 
+        body {
+            width: 100vw;
+        }
+
         .container {
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 20px;
-            box-shadow: 0 0 5px rgba(19, 19, 19, 0.1);
+            width: 40vw;
+            margin: 4rem 0;
+            padding: 1rem 5rem;
+            margin-top: 3rem;
+            display: flex;
+            flex-direction: column;
+            background-color: rgb(45, 45, 42);
+            position: relative;
+            left: 50%;
+            transform: translate(-50%);
+            box-shadow: 0px 15px 20px rgb(84, 80, 80);
             border-radius: 5px;
         }
 
         h1 {
             text-align: center;
-            padding-top: 5rem;
-            padding-bottom: 1rem;
+            padding-top: .5rem;
+            color: white;
+        }
+
+        h2,
+        h4 {
+            color: white;
+            text-align: center;
+            margin: 1px 0;
+        }
+
+        h2 {
+            font-size: 30px;
+            margin: 0 0;
+        }
+
+        h4 {
+            margin-bottom: 2rem;
         }
 
         .rating-stars {
             display: flex;
+            height: 5rem;
             justify-content: center;
-            margin-bottom: 20px;
+            margin-bottom: 8px;
             transform: rotate(180deg);
+            align-items: start;
+            overflow: hidden;
+        }
+
+        img {
+            width: 11rem;
+            align-self: center;
+            margin: 10px;
+            border-bottom-left-radius: 5rem;
+            border-bottom-right-radius: 5rem;
         }
 
         .rating-stars input[type="radio"] {
             display: none;
-            z-index:-1;
+            z-index: -1;
+            margin: 0;
         }
 
         .rating-stars label {
@@ -44,7 +83,7 @@
             color: #ccc;
             cursor: pointer;
             transition: color 0.3s;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
             transform: rotate(180deg);
         }
 
@@ -59,6 +98,8 @@
             padding: 10px;
             border-radius: 5px;
             border: 1px solid #ccc;
+            font-size: 1rem;
+            font-weight: bold;
         }
 
         input[type="text"] {
@@ -66,18 +107,36 @@
             padding: 10px;
             border-radius: 5px;
             border: 1px solid #ccc;
+            outline: none;
+            border: none;
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        textarea:focus,
+        input:focus {
+            border: none;
+            outline: none;
         }
 
         button {
+            height: 2rem;
+            height: 3rem;
             display: block;
-            margin: 20px auto;
-            padding: 10px 20px;
+            margin: 30px auto;
+            padding: 10px 35px;
             font-size: 18px;
-            background-color: #4CAF50;
-            color: white;
+            background-color: #d5d5dc;
+            color: rgb(0, 0, 0);
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            box-shadow: 0 10px 20px rgb(63, 56, 56);
+            font-weight: 700;
+        }
+
+        button:hover {
+            background-color: rgb(255, 255, 255);
         }
 
         #review-list {
@@ -89,6 +148,7 @@
             margin-bottom: 20px;
             border-bottom: 1px solid #ccc;
             padding-bottom: 10px;
+            align-self: start;
         }
 
         .review-item:last-child {
@@ -102,79 +162,250 @@
         .review-item p {
             margin: 0;
         }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .n-ul a {
+            color: black;
+        }
+
+        .review-view {
+            width: 70vw;
+            height: 50rem;
+            background-color: rgb(172, 170, 179);
+            position: relative;
+            left: 50%;
+            transform: translate(-50%);
+            margin: 20px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .review-view h1 {
+            font-size: 3rem;
+            padding-top: 2rem;
+            padding-bottom: 1rem;
+
+        }
+
+        .review-list {
+            width: 80%;
+            height: 5.2rem;
+            background-color: rgb(248, 248, 248);
+            display: flex;
+            border-radius: 10px;
+            margin: 1rem 0;
+        }
+
+
+        .review-list .name {
+            width: 6rem;
+            height: 3rem;
+            padding: 0 4rem;
+            background-color: rgb(232, 232, 232);
+            margin: auto 20px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 2px;
+            border: 2px solid rgb(100, 97, 97);
+        }
+
+        .review-list .rate {
+            width: 6rem;
+            height: 3rem;
+            padding: 0 0;
+            background-color: rgb(232, 232, 232);
+            margin: auto 20px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 2px;
+            border: 2px solid rgb(100, 97, 97);
+
+        }
+
+        .review-list .disc {
+            width: 33rem;
+            height: 80%;
+            overflow: scroll;
+            font-size: 15px;
+            border-radius: 2px;
+            border: 2px solid rgb(0, 0, 0);
+            align-self: center;
+            font-weight: 700;
+            text-align: center;
+            margin: 0 10px;
+            background-color: rgb(232, 232, 232);
+        }
+
+        .review-list p {
+            font-family: cursive;
+        }
+
+        #rev-img {
+            width: 50rem;
+        }
+
+        #totalrate {
+            display: none;
+        }
+
+        .popup {
+            width: 37rem;
+            height: 20rem;
+            background-color: rgb(85, 85, 85);
+            border-radius: 7px;
+            box-shadow: 0 10px 20px black;
+            position: absolute;
+            top: -53%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: top .010s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border: 2px solid rgb(255, 255, 255);
+        }
+
+        .popup-active {
+            top: 53%;
+        }
+
+        #popup h1{
+            font-size: 4rem;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            font-weight: 600;
+            margin: 2rem auto  0;
+            text-shadow: 0 10px 20px black;
+        }
+         #popup p{
+            font-size: 1.7rem;
+            font-family: cursive;
+            font-weight: 600;
+            margin: 1rem auto;
+            color: rgb(255, 253, 253);   
+            text-align: center;
+           text-shadow: 0 10px 20px black;
+        }
+        #pop-btn{
+            height: 2rem;
+            height: 3rem;
+            padding: 2rem 3.5rem;
+            margin: 1rem auto;
+            font-size: 18px;
+            background-color: rgb(43, 51, 212);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            color: white;
+            font-weight: 800;
+            cursor: pointer;
+             border: 2px solid white;
+            box-shadow: 0 0 20px rgb(221, 219, 219);
+            border-radius: 10px;
+            box-shadow: 0 10px 20px black;
+            text-shadow: 0 10px 20px black;
+        }
+        #pop-btn h6 {
+            color: white;
+            font-size: 2rem;
+            
+        }
     </style>
+    <link rel="stylesheet" href="css/rateus-mob.css">
 </head>
 
 <body>
-    <div class="container">
-        <h1>Rate Us</h1>
-
-        <input type="text" id="user-name" placeholder="Enter your name">
+    <form class="container" method="post" id="container" action="/RateUs">
+        <img src="image/rateimg.png" alt="">
+        <h1>Rate Us!</h1>
+        <h2>Your Opinion Matters to Us!</h2>
+        <h4>we work hard to make the things closer for you...and we want to know your ratings for us.. </h4>
+        <input type="text" id="user-name" name="name" placeholder="Enter your name" required>
 
         <div class="rating-stars">
-            <input type="radio" name="rating" id="star5" value="5" />
+            <input type="radio" name="rating" id="star5" value="5" required />
             <label for="star5">&#9733;</label>
-            <input type="radio" name="rating" id="star4" value="4" />
+            <input type="radio" name="rating" id="star4" value="4" required />
             <label for="star4">&#9733;</label>
-            <input type="radio" name="rating" id="star3" value="3" />
+            <input type="radio" name="rating" id="star3" value="3" required />
             <label for="star3">&#9733;</label>
-            <input type="radio" name="rating" id="star2" value="2" />
+            <input type="radio" name="rating" id="star2" value="2" required />
             <label for="star2">&#9733;</label>
-            <input type="radio" name="rating" id="star1" value="1" />
+            <input type="radio" name="rating" id="star1" value="1" required />
             <label for="star1">&#9733;</label>
         </div>
+        <p name="totalrate" id="totalrate"> </p>
 
-        <textarea id="review-text" placeholder="Write your review"></textarea>
-        <a href="/RateUs" id="submit-review">Submit</a>
+        <textarea id="review-text" placeholder="Write your review" name="userreview"></textarea>
+        <a href="" id="submit-review"><button id="btn" type="">Submit</button>  </a>
+    </form>
+                <div class="popup" id="popup">
+                    <h1 class="t-u">Thank You</h1>
+                    <p>Your review was successfully submitted  
+                        <div id="pop-btn">
+                          <h6>Okay</h6>
+                        </div>
+                </div>
+    {{!-- <div class="review-view">
+        <h1>Reviews</h1>
 
-        {{!-- <h2>Reviews</h2> --}}
-        <ul id="review-list"></ul>
-    </div>
+
+        <div class="review-list">
+            <div class="name">
+                <p>Havyas</p>
+            </div>
+            <div class="rate">
+                <p>5</p>
+            </div>
+            <div class="disc">
+                <p>Lorem ipsum dolor sit amet consectetur adipis Lorem ipsum dolor sit amet consectetur adipisicing
+                    elit. Optio reiciendis asperiores, dolor possimus maiores neque quo autem illo fuga esse illum totam
+                    quia blanditiis quis, accusamus, necessitatibus magnam repudiandae repellat? Lorem ipsum, dolor sit
+                    amet consectetur adipisicing elit. Rem, harum totam? Fugit, consequatur eos culpa soluta placeat
+                    repellat voluptas voluptatum asperiores, tempore delectus odit? Repudiandae nulla debitis reiciendis
+                    sequi voluptas.icing elit. Nihil praesentium recusandae error! Consectetur, eius ullam vel molestiae
+                    neque eaque optio quo omnis aliquam, dolore adipisci reprehenderit perferendis autem illum magni.
+                </p>
+            </div>
+        </div>
+        <img id="rev-img"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdby8i5gu9rDWFSzD5Mlo2oaP6D-uQKYKV-Dc3yIl-FxAVyYvdw5NRRbF8lxW5ue_QJ-Q&usqp=CAU"
+            alt="">
+    </div> --}}
+    {{!-- </div> --}}
 
     <script>
         // JavaScript functionality for the page
-        document.getElementById("submit-review").addEventListener("click", function () {
+        document.getElementById('submit-review').addEventListener("click", () => {
             var rating = document.querySelector('input[name="rating"]:checked').value;
-            var review = document.getElementById("review-text").value;
-            var userName = document.getElementById("user-name").value;
+            let totalrate = document.getElementById('totalrate');
+            totalrate.innerHTML = rating;
+        })
 
-            if (!rating || review.trim() === "" || userName.trim() === "") {
-                alert("Please provide a rating, review, and user name.");
-                return;
-            }
 
-            var reviewItem = document.createElement("li");
-            reviewItem.classList.add("review-item");
-
-            var ratingHeading = document.createElement("h3");
-            ratingHeading.innerText = "Rating: " + rating;
-
-            var userNameParagraph = document.createElement("p");
-            userNameParagraph.innerText = "User: " + userName;
-
-            var reviewParagraph = document.createElement("p");
-            reviewParagraph.innerText = review;
-
-            reviewItem.appendChild(ratingHeading);
-            reviewItem.appendChild(userNameParagraph);
-            reviewItem.appendChild(reviewParagraph);
-
-            document.getElementById("review-list").appendChild(reviewItem);
-
-            // Clear the form
-            document.querySelector('input[name="rating"]:checked').checked = false;
-            document.getElementById("review-text").value = "";
-
-            // Save rating to localStorage
-            var ratings = JSON.parse(localStorage.getItem("ratings")) || [];
-            var ratingData = {
-                rating: rating,
-                review: review,
-                userName: userName
-            };
-            ratings.push(ratingData);
-            localStorage.setItem("ratings", JSON.stringify(ratings));
-        });
+        let form = document.getElementById('container');
+        form.addEventListener("submit", () => {
+            document.getElementById("popup").classList.add('popup-active')
+        })
+        let popup = document.getElementById('popup');
+        popup.addEventListener("click", () => {
+            popup.classList.remove('popup-active')
+         })
     </script>
 </body>
 

@@ -6,7 +6,7 @@
 
 body {
     width: 100%;
-    background: #cdc8c8;
+    background: #dbdbdb;
 }
 
 .hidden {
@@ -276,14 +276,21 @@ body {
     align-items: center;
     justify-content: center;
     text-align: start;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: monospace;
     color: rgb(0, 0, 0);
     font-size: 2.5rem;
     margin-top: 3rem;
-    padding-left: 24rem;
+    /* padding-left: 24rem; */
+    text-align: center;
 
 }
 
+.song-head h1,
+.album-head h1
+{
+    color: #ffffff;
+    text-shadow:0 5px 10px rgb(42, 43, 43);
+}
 .album-card-container {
     width: 80%;
     display: grid; 
