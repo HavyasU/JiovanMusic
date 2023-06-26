@@ -16,7 +16,7 @@
         height: 100vh;
         font-size: 16px;
         z-index: -5;
-        background-color: rgb(226, 227, 229);
+        background-color: rgb(141, 156, 184);
     }
 
     .inp-container {
@@ -41,6 +41,7 @@
     .n-nav {
         width: 500px;
         height: 4rem;
+        border-bottom: 3px solid rgb(251, 75, 213);
     }
 
 
@@ -266,7 +267,7 @@
             margin: auto 1rem;
         }
         .album-card-container , body{
-            background-color: rgb(255, 255, 255);
+            background-color: rgb(45, 45, 42);
         }
         .social-links a i{
             color: white;
