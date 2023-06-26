@@ -18,7 +18,9 @@
         z-index: -5;
         background-color: rgb(141, 156, 184);
     }
-
+    .album-card-container , body{
+            background-color: rgb(191, 191, 185);
+        }
     .inp-container {
       width: 90%;
       box-shadow: 0px 8px 15px grey;
@@ -144,7 +146,6 @@
 
     .album-card-container {
         width: 100%;
-        background-color: rgb(255, 255, 255);
         display: grid;
         grid-template: auto auto;
         justify-content: start;
@@ -266,9 +267,7 @@
         .card-song .song-s-img{
             margin: auto 1rem;
         }
-        .album-card-container , body{
-            background-color: rgb(45, 45, 42);
-        }
+        
         .social-links a i{
             color: white;
         }
@@ -304,5 +303,8 @@
         .album-head h1 ,.song-head h1{
             font-size:2rem;
             padding-left: 2rem;
+        }
+        #play-btn{
+            min-width: 4.5rem;
         }
         }
