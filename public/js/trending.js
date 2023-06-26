@@ -209,7 +209,7 @@ function addchart(e, index, data) {
         </div>
         <div class="a-details">
             <h1>${e.title}</h1>
-            <h4>${e.songCount} Songs</h4>
+            <h4>${e.songCount='undefined'?"  ":e.songCount+"Songs"}</h4>
             <p class="hidden">${e.id}</p>
         </div>`;
     chartcardcontainer.appendChild(li);
@@ -242,7 +242,9 @@ function setalbum(pdata) {
         </div>
         <div class="albm-songs">
         </div>
+        
  `
+    console.log(pdata.data)
     albumpop.appendChild(div)
     al_bk_btn[0].addEventListener("click", () => {
         albumpop.classList.toggle('active');

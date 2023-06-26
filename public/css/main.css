@@ -271,7 +271,7 @@ footer {
   margin-top: .5rem;
  }
  .hide{
-  display:flex;
+  display:none;
  }
  .loader {
   position: relative;

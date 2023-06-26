@@ -216,7 +216,7 @@ body {
     list-style: none;
     margin: .6rem 1rem;
     border-radius: 10px;
-    box-shadow: 0px 8px 20px rgb(127, 122, 122);
+    box-shadow: 0px 10px 20px rgb(0, 0, 0);
     border: 2px solid white;
     color: black;
     transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
@@ -224,7 +224,7 @@ body {
 
 .card-song:hover {
     transform: rotateY(10deg) rotateX(2deg) scale(1.040);
-    box-shadow: 0px 0px 35px 15px rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 0px 35px 15px rgba(0, 0, 0, 0.2);
 }
 
 .song-s-img {
@@ -296,6 +296,7 @@ body {
     display: grid; 
     grid-template-columns: auto auto auto auto;
     margin: 0 auto;
+    padding: 1rem 0;
     justify-content: center; 
 }
 
@@ -309,7 +310,7 @@ body {
     color: aliceblue;
     margin: 1rem 1rem;
     border-radius: 10px;
-    box-shadow: 0px 5px 20px rgb(127, 122, 122);
+    box-shadow: 0px 10px 20px rgb(0, 0, 0);
     border: 2px solid white;
     transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
     background-image: linear-gradient(40deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
