@@ -19,6 +19,7 @@
     "gh": "^2.8.9",
     "mongoose": "^7.3.1",
     "nodemon": "^2.0.22",
+    "railway": "^2.0.17",
     "youtube-music-api": "^1.0.6"
   }
 }

@@ -3,7 +3,11 @@ const express = require('express')
 const dsroute = express.Router();
 const mongoose = require('mongoose');
 const connectdb = async()=>{
-  await mongoose.connect("mongodb://127.0.0.1:27017/jiovan");
+  await mongoose.connect("mongodb://mongo:kkZqSB305jF8g2PRRp0L@containers-us-west-25.railway.app:6834" ,{
+    dbName: 'jiovan',
+    retryWrites: true,
+    w: 'majority'
+  })
 }
 connectdb().then(()=> console.log('i think conected')).catch((err)=>{
   console.log(err)
@@ -18,14 +22,14 @@ let reviews = mongoose.model('reviews',reviewschema)
 
 let userreview ;
 dsroute.post('/RateUs',(req,res)=>{
-  userreview =  new reviews(
+  userreview =  new reviews( 
     {
       name:req.body.name,
       rate:req.body.rating,
       Review:req.body.userreview
     })
     setTimeout(() => {
-      userreview.save();
+      userreview.save().catch((err)=>{console.log(err)});
     }, 1000);
     
   })
@@ -37,7 +41,7 @@ dsroute.post('/RateUs',(req,res)=>{
 dsroute.get('/reviewdata-havyas',(req,res)=>{
   let rdata;
   const finddata = async() =>{
-    rdata = await reviews.find({})
+    rdata = await reviews.find()
     console.log(rdata)
     res.send(rdata)
 }
