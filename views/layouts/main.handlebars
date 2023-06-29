@@ -23,6 +23,9 @@
       <li class="n-li"> <a class="nav-link" href="/" id="home">Home</a></li>
       <li class="n-li"> <a class="nav-link" href="/search" id="search">Search</a></li>
       <li class="n-li"> <a class="nav-link" href="/RateUs" id="rateus">Rate Us</a></li>
+      <li class="n-li"><i class="fa-solid fa-circle-half-stroke mode-changer"></i></li>
+      
+      
     </ul>
   </nav>
 
@@ -76,5 +79,21 @@
   }
   },10)
   
+
+    let ss  = document.createElement('link')
+    ss.setAttribute("rel","stylesheet")
+      ss.setAttribute("id","changer")
+      ss.setAttribute("href","css/darkmode.css")
+    document.body.appendChild(ss)
+  let modechanger = document.getElementsByClassName("mode-changer")[0];
+    let sslink = document.getElementById('changer');
+  
+modechanger.addEventListener("Click",()=>{
+    sslink.toggleAttribute("href");
+    if(sslink.hasAttribute("href"))
+    {
+      sslink.setAttribute("href","css/darkmode.css")
+    }
+  })
 </script>
 </html>

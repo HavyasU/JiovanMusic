@@ -1,0 +1,52 @@
+.n-nav{
+    background-color:  rgb(45, 45, 42);
+}
+#body
+{
+    background-color: rgb(45, 45, 42);
+}
+.n-nav{
+    box-shadow: 0 10px 10px rgb(0, 0, 0);
+}
+.b-white
+{
+background-color: white;
+}
+.t-white
+{
+background-color: white;
+}
+
+*{
+    color: white;
+}
+.mode-changer
+{
+    color: white;
+}
+.borderadd
+{
+    border-bottom: 5px solid white;
+}
+.container 
+{
+    background-color: white;
+    box-shadow: 0 10px 20px black;
+    color: black;
+}
+.container h1 ,h2,h6,h4{
+    color: black;
+}
+.container input ,textarea , .container input ,textarea:focus{
+    border: 2px solid rgb(65, 56, 56);
+    color: black;
+}
+.inp-container 
+{
+    color:black;
+    box-shadow:0 10px 20px black;
+}
+.inp-container input 
+{
+    color:black;
+}
