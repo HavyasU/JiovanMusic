@@ -338,3 +338,7 @@ footer {
   background-color: burlywood;
  }
  
+ .borderadd
+ {
+  border-bottom: 5px solid white;
+ }

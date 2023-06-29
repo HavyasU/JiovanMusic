@@ -1,6 +1,7 @@
-.hidden{
+.hidden {
     display: none;
 }
+
 @media (max-width:450px) {
 
 
@@ -18,19 +19,25 @@
         z-index: -5;
         background-color: rgb(0, 0, 0);
     }
-    .album-card-container , body{
-            background-color: rgb(45, 45, 42);
-        }
-    .inp-container {
-      width: 90%;
-      box-shadow: 0px 8px 15px grey;
+
+    .album-card-container,
+    body {
+        background-color: rgb(45, 45, 42);
     }
-    .inp-container input{
+
+    .inp-container {
+        width: 90%;
+        box-shadow: 0px 8px 15px grey;
+    }
+
+    .inp-container input {
         width: 85%;
-      }
-      .inp-container button{
+    }
+
+    .inp-container button {
         width: 15%;
-      }
+    }
+
     #s-name {
         font-size: 1rem;
     }
@@ -152,167 +159,214 @@
         justify-content: start;
         overflow: scroll;
     }
-        .card-album {
-            width: 15rem;
-            height: 20rem;
-            grid-row: 1;
-            box-shadow: 0px 10px 16px black;
-            border-radius: 5px;
-        }
 
-        .album-img {
-            width: 100%;
-            height: 70%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .a-img-div{
-            width: 100vw;
-        }
-        .album-img img {
-            width: 96%;
-            height: 96%;
-        }
-        
-        .a-details h1 {
-            font-size: 1.2rem;
-            margin-top: .6rem;
-        }
-        .album-popup{
-            width: 100vw;
-        }
-        .albm-details{
-            height: auto;
-            margin: .5rem auto;
-        }
-        .albm-details h1{
-            font-size: 1rem;
-        }
-        .albm-details h2{
-            font-size: .8rem;
-        }
-        .album-song{
-            width: 90%;
-        }
-        .album-song  .s-details h1{
-            height: 2rem;
-            font-size: 1.1rem;
-            height: fit-content;
-            overflow: scroll;
-        }
-        .album-song .s-details h4{
-            font-size: .6rem;
-        }
-        .album-song .s-details{
-            width: 10rem;
-            margin: .4rem;
-            display: flex;
-            flex-direction: column;
-            text-align:left;
-            padding-left: 0.3rem;
-        }
-        .albm-img{
-            width: 13rem;
-            height: 13rem;
-            margin-right: 3rem;
-            margin: .5rem auto;
-            margin-top: 1.5rem;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            object-fit: contain;
-        }
-        .albm-img img{
-            width: 100%;
-            height: 100%;
-            margin-right: 3rem;
-            margin: .3erm auto;
-            padding: 0;
-        }
-        .popup-div{
-            position: fixed;
-            top: 1;
-            width: 100%;
-            min-height: 100vh;
-            overflow: hidden;
-            /* display: block; */
-        }
-        .player
-        {
-            width: 85%;
-            height: auto;
-        }
-        .back-btn{
-            margin: 0;
-            top: .4rem;
-        }
-        .card-song{
-            overflow: scroll;
-            box-shadow: 0 8px 10px black;
-            border-radius: 7px;
-            border-top-right-radius: 0;
-        }
-        .card-song .s-details{
-            margin: auto;
-            overflow: scroll;
-        }
-        .card-song .s-details h1{
-            font-size: 1.3rem;
-        }
-        .card-song .s-details h4{
-            font-size: .8rem;
-        }
-        .card-song .song-s-img img{
-            margin: auto;
-            width: 100%;
-            height: 100%;
-           padding: 0;
-        }
-        .card-song .song-s-img{
-            margin: auto 1rem;
-        }
-        
-        .social-links a i{
-            color: white;
-        }
-        #s-songs{
-            width: 100vw;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
+    .card-album {
+        width: 15rem;
+        height: 20rem;
+        grid-row: 1;
+        box-shadow: 0px 10px 16px black;
+        border-radius: 5px;
+    }
 
-        #s-songs .card-song{
-            width: 85%;
-        }
-        #s-songs .card-song {
-            margin: .5rem .5rem;
-        }
-        #s-songs .card-song .s-details{
-            margin: auto .5rem;
-        }
-        .s-songs .card-song h1{
-            font-size: .3rem;
-        }
-        .s-song-details h4{
-            font-size: .5rem;
-        }
-        .player-btn{
-            margin: 1rem auto;
-        }
-        .album-head,.song-head{
-            padding: 0;
-        }
-        .album-head h1 ,.song-head h1{
-            font-size:2rem;
-            text-shadow: 0 10px 20px black;
-            font-size: 2.2rem;
-            text-align: center;
-        }
-        #play-btn{
-            min-width: 4.5rem;
-        }
-        }
+    .album-img {
+        width: 100%;
+        height: 70%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .a-img-div {
+        width: 100vw;
+    }
+
+    .album-img img {
+        width: 96%;
+        height: 96%;
+    }
+
+    .a-details h1 {
+        font-size: 1.2rem;
+        margin-top: .6rem;
+    }
+
+    .album-popup {
+        width: 100vw;
+        background-color:  rgb(45, 45, 42);
+    }
+
+    .albm-details {
+        height: auto;
+        margin: .5rem auto;
+    }
+
+    .albm-details h1 {
+        font-size: 1rem;
+    }
+
+    .albm-details h2 {
+        font-size: .8rem;
+    }
+
+    .album-song {
+        width: 90%;
+    }
+
+    .album-song .s-details h1 {
+        height: 2rem;
+        font-size: 1.1rem;
+        height: fit-content;
+        overflow: scroll;
+        color: white;
+    }
+
+    .album-song .s-details h4 {
+        font-size: .6rem;
+    }
+
+    .album-song .s-details {
+        width: 10rem;
+        margin: .4rem;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        padding-left: 0.3rem;
+    }
+
+    .albm-img {
+        width: 13rem;
+        height: 13rem;
+        margin-right: 3rem;
+        margin: .5rem auto;
+        margin-top: 1.5rem;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        object-fit: contain;
+    }
+
+    .albm-img img {
+        width: 100%;
+        height: 100%;
+        margin-right: 3rem;
+        margin: .3erm auto;
+        padding: 0;
+    }
+
+    .popup-div {
+        position: fixed;
+        top: 1;
+        width: 100%;
+        min-height: 100vh;
+        overflow: hidden;
+        /* display: block; */
+        background-color: rgb(45, 45, 42);
+    }
+
+    .player {
+        width: 85%;
+        height: auto;
+    }
+    .player h1,h3,p{
+        color: #ffffff;
+    }
+
+    .back-btn {
+        margin: 0;
+        top: .4rem;
+    }
+
+    .card-song {
+        overflow: scroll;
+        box-shadow: 0 8px 10px black;
+        border-radius: 7px;
+        border-top-right-radius: 0;
+    }
+
+    .card-song .s-details {
+        margin: auto;
+        overflow: scroll;
+    }
+
+    .card-song .s-details h1 {
+        font-size: 1.3rem;
+    }
+
+    .card-song .s-details h4 {
+        font-size: .8rem;
+    }
+
+    .card-song .song-s-img img {
+        margin: auto;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+    }
+
+    .card-song .song-s-img {
+        margin: auto 1rem;
+    }
+
+    .social-links a i {
+        color: white;
+    }
+
+    #s-songs {
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #s-songs .card-song {
+        width: 85%;
+    }
+
+    #s-songs .card-song {
+        margin: .5rem .5rem;
+    }
+
+    #s-songs .card-song .s-details {
+        margin: auto .5rem;
+    }
+
+    .s-songs .card-song h1 {
+        font-size: .3rem;
+    }
+
+    .s-song-details h4 {
+        font-size: .5rem;
+    }
+
+    .player-btn {
+        margin: 1rem auto;
+    }
+
+    .album-head,
+    .song-head {
+        padding: 0;
+    }
+
+    .album-head h1,
+    .song-head h1 {
+        font-size: 2rem;
+        text-shadow: 0 10px 20px black;
+        font-size: 2.2rem;
+        text-align: center;
+    }
+
+    #play-btn {
+        min-width: 4.5rem;
+    }
+    .albm-songs
+    {
+        background-color: rgb(45, 45, 42);
+    }
+    .n-li
+    {
+        padding-bottom: 5px;
+    }
+    
+}
