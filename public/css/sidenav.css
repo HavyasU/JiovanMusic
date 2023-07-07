@@ -1,0 +1,48 @@
+.sidenav
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 13rem;
+    height: 100vh;
+    background-color: rgb(40, 40, 41);
+    box-shadow: 5px 0px 8px rgb(12, 12, 1);
+    border-right: 10px solid rgb(40, 40, 41);   
+    padding-left: 10px;
+    transition: all 1s cubic-bezier(0.215, 0.610, 0.355, 1);
+    left:-20rem;
+    z-index: 10;
+}
+.bg-body-tertiary
+{
+    margin-bottom:10px;
+    box-shadow: 0 10px 20px rgb(0, 0, 0);
+    cursor: pointer;
+    border-radius: 20px;
+}
+.exit-btn
+{
+    width: 3rem;
+    height:3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 80%;
+    cursor: pointer;
+    position: relative;
+    left: 8.6rem;
+    margin: 1rem 0;
+    text-align: center;
+    text-shadow: 0 0px 20px rgb(255, 255, 255);
+}
+.fa-circle-xmark{
+    font-size: 1.5rem;
+}
+.h1
+{
+    font-weight: 900;
+}
+#listbtn
+{
+    cursor: pointer;
+}

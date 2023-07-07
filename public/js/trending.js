@@ -1,6 +1,7 @@
 let albumcardcontainer = document.getElementsByClassName('album-card-container')[0];
 let chartcardcontainer = document.getElementsByClassName('album-chart-container')[0];
 //sripts
+let downsongarray = [];
 let cduration = document.getElementById('c-duration')
 let tduration = document.getElementById('t-duration')
 let playindex;
@@ -19,7 +20,7 @@ let slink = "https://aac.saavncdn.com/903/f8ef6c593dd5689cf59ff681c6cc83c6_48.mp
 //     }
 // })
 
-const popupfornpbtn=(songdata)=>{
+const popupfornpbtn = (songdata) => {
     setsong(songdata.downloadUrl[1].link);
     let playerimg = document.getElementById('player-img');
     let playerdetails = document.getElementsByClassName('player-details')
@@ -39,50 +40,45 @@ const popupfornpbtn=(songdata)=>{
     //     }
     // })
     playdiv.firstChild.nextElementSibling.nextElementSibling.addEventListener("click", (e) => {
-        
+
     })
 }
 let prebtn = document.getElementsByClassName('prebtn');
 prebtn = [...prebtn];
 let nextbtn = document.getElementsByClassName('nextbtn');
 nextbtn = [...nextbtn];
-const addbtnevents = ()=>
-{   
-    nextbtn.forEach((e)=>{
-        e.addEventListener("click",()=>{
+const addbtnevents = () => {
+    nextbtn.forEach((e) => {
+        e.addEventListener("click", () => {
             if (song)
-            song.pause();
+                song.pause();
             play();
-            if(playindex == songdataarray.length-1)
-            {
+            if (playindex == songdataarray.length - 1) {
                 popupfornpbtn(songdataarray[0]);
                 playindex = 0;
             }
-            else
-            {
-            popupfornpbtn(songdataarray[playindex+1]);
-            playindex = playindex+1;
-            console.log(playindex)
+            else {
+                popupfornpbtn(songdataarray[playindex + 1]);
+                playindex = playindex + 1;
+                console.log(playindex)
             }
-    })
+        })
     });
-    prebtn.forEach((e)=>{
-        e.addEventListener("click",()=>{
+    prebtn.forEach((e) => {
+        e.addEventListener("click", () => {
             if (song)
-            song.pause();
+                song.pause();
             play();
-            if(playindex == 0)
-            {
-                popupfornpbtn(songdataarray[songdataarray.length-1]);
-                playindex = songdataarray.length-1;
+            if (playindex == 0) {
+                popupfornpbtn(songdataarray[songdataarray.length - 1]);
+                playindex = songdataarray.length - 1;
             }
-            else
-            {
-            popupfornpbtn(songdataarray[playindex-1]);
-            playindex = playindex-1;
-            console.log(playindex)
+            else {
+                popupfornpbtn(songdataarray[playindex - 1]);
+                playindex = playindex - 1;
+                console.log(playindex)
             }
-    })
+        })
     });
 }
 addbtnevents();
@@ -131,13 +127,21 @@ let albumbox = document.getElementsByClassName('card-album')[0];
 let pop = document.getElementsByClassName('popup-div')[0];
 let albumpop = document.getElementsByClassName('album-popup')[0];
 let songcardcontainer = document.getElementsByClassName('song-card-container')[0];
+let chartaddbtn = document.getElementById('chartaddbtn')
+let albumaddbtn = document.getElementById('albumaddbtn')
 const homepage = async () => {
 
-    let res = await fetch('https://saavn.me/modules?language=kannada,tulu,hindi,english,tamil,telugu');
+    let res = await fetch('https://saavn.me/modules?language=kannada,tulu,hindi,english,malayalam,tamil,telugu');
     let data = await res.json();
     // console.log(data)
     loadalbum(data.data);
-    loadchart(data.data)
+    albumaddbtn.classList.add('button-active')
+    albumaddbtn.addEventListener("click", () => {
+        loadalbum(data.data);
+    })
+    chartaddbtn.addEventListener("click", () => {
+        loadchart(data.data)
+    })
 }
 
 function popup(songdata) {
@@ -162,7 +166,7 @@ function popup(songdata) {
         }
     })
     playdiv.firstChild.nextElementSibling.nextElementSibling.addEventListener("click", (e) => {
-        
+
     })
 }
 homepage()
@@ -197,6 +201,7 @@ function addplaylist(e, index, data) {
     albumcardcontainer.appendChild(li);
     if ((index + 1) > data.playlists.length - 1) {
         addevent("playlist")
+
     }
 }
 function addchart(e, index, data) {
@@ -209,23 +214,25 @@ function addchart(e, index, data) {
         </div>
         <div class="a-details">
             <h1>${e.title}</h1>
-            <h4>${e.songCount='undefined'?"  ":e.songCount+"Songs"}</h4>
+            <h4>${e.songCount = 'undefined' ? "  " : e.songCount + "Songs"}</h4>
             <p class="hidden">${e.id}</p>
         </div>`;
-    chartcardcontainer.appendChild(li);
+
+    albumcardcontainer.appendChild(li);
     if ((index + 1) > data.charts.length - 1) {
         // console.log("data is "+ data)
         // console.log(data.charts)
-        addevent("charts",data.charts);
-        // console.log("clicked from passs")
+        addevent("charts", data.charts);
     }
 }
-let al_bk_btn = document.getElementsByClassName('a-back-btn');
 // let album = document.getElementsByClassName('album-popup');
 function setalbum(pdata) {
+
+    console.log("welcome")
     console.log(pdata)
+    
     let div = document.createElement('div')
-    div.innerHTML = `
+    div.innerHTML = `   
         <div class="button">
             <div class="a-back-btn">
                 <i class="fa-solid fa-arrow-left"></i>
@@ -246,8 +253,9 @@ function setalbum(pdata) {
  `
     console.log(pdata.data)
     albumpop.appendChild(div)
+    let al_bk_btn = document.getElementsByClassName('a-back-btn');
     al_bk_btn[0].addEventListener("click", () => {
-        albumpop.classList.toggle('active');
+        albumpop.classList.remove('active');
     })
     pdata.data.songs.forEach((e, index) => {
         let albm_songs = document.getElementsByClassName('albm-songs')[0];
@@ -259,16 +267,21 @@ function setalbum(pdata) {
     <div class="s-details">
         <h1>${e.name}</h1>
         <h4>${e.primaryArtists}</h4> 
-    </div>`
+    </div>
+    <div class="song-play-btn" onclick="">
+    <span><i class="fa-solid fa-play" id="s-play-btn"></i></span>
+</div>`
         albm_songs.appendChild(li);
+
 
         if ((index + 1) > pdata.data.songs.length - 1) {
             // addevent("what",data,index of items)   //contents
             addevent("songs", pdata.data.songs, index)
         }
     })
+    
+    albumpop.classList.add('active');
 }
-const albumpopup = async (id) => { };
 const albumpopups = async (id) => {
     albumpop.innerHTML = " ";
     albumpop.classList.toggle('active');
@@ -282,6 +295,7 @@ const albumpopups = async (id) => {
 }
 function addevent(id, songdata) {
     if (id == "playlist") {
+        
         let cardalbum = document.getElementsByClassName('card-album');
         cardalbum = [...cardalbum];
         cardalbum.forEach((e, index) => {
@@ -290,37 +304,60 @@ function addevent(id, songdata) {
             })
         })
     }
+    if (id == "albums") {
+        console.log("album events added")
+        let cardalbum = document.getElementsByClassName('card-album');
+        cardalbum = [...cardalbum];
+        cardalbum.forEach((e, index) => {
+            e.addEventListener("click", () => {
+                searchalbum(e.lastElementChild.lastElementChild.innerHTML)
+                console.log('click')
+            })
+        })
+    }
+    if (id == "toptrending") {
+        let cardalbum = document.getElementsByClassName('card-album');
+        cardalbum = [...cardalbum];
+        cardalbum.forEach((e, index) => {
+            e.addEventListener("click", () => {
+                albumpopups(e.lastElementChild.lastElementChild.innerHTML);
+            })
+        })
+    }
     if (id == "songs") {
         let albumsong = document.getElementsByClassName('album-song');
         albumsong = [...albumsong];
         albumsong.forEach((e, index) => {
+            downsongarray[index] = songdata[index];
             e.addEventListener("click", (ele) => {
-                popup(songdata[index]);
+                addtodown(songdata[index], index,songdata);
             })
         })
+        
     }
     if (id == "charts") {
-        
+
         // console.log("hello")
         let albumsong = document.getElementsByClassName('card-chart');
         albumsong = [...albumsong];
         albumsong.forEach((e, index) => {
             // console.log("clicked")
             e.addEventListener("click", (ele) => {
-                    albumpopups(e.lastElementChild.lastElementChild.innerHTML)
+                albumpopups(e.lastElementChild.lastElementChild.innerHTML)
             })
         })
     }
 }
 const loadalbum = (data) => {
-    
+
     let dataarray;
     dataarray = data;
+    albumcardcontainer.innerHTML = " "
     data.playlists.forEach((e, index) => {
         if (e.songCount > 0)
             addplaylist(e, index, data)
     })
-    // if (data)
+    // if (data) 
     // data.albums.forEach((e, index) => {
     //         console.log(e)
     //         if (e.songCount > 0)
@@ -328,10 +365,11 @@ const loadalbum = (data) => {
     //     })
 }
 const loadchart = (data) => {
-let dataarray;
+    let dataarray;
     dataarray = data.charts;
     // console.log(dataarray)
-    dataarray.forEach((e,index)=>{
+    albumcardcontainer.innerHTML = " "
+    dataarray.forEach((e, index) => {
         addchart(e, index, data)
     })
 }

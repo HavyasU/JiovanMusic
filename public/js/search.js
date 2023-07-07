@@ -1,114 +1,123 @@
-let song,playindex;
-let cduration = document.getElementById('c-duration')
-let tduration = document.getElementById('t-duration')
+let ssong, splayindex;
+let scduration = document.getElementById('c-duration')
+let stduration = document.getElementById('t-duration')
 
-let pop = document.getElementsByClassName('popup-div')[0];
-let range = document.getElementById('range');
-let playdiv = document.getElementById('play-div');
+let spop = document.getElementsByClassName('popup-div')[0];
+let srange = document.getElementById('range');
+let splaydiv = document.getElementById('play-div');
 let parentdiv = document.getElementById('s-songs')
 let input = document.getElementById('s-name')
 let sbtn = document.getElementById('search-btn')
-let songdataarray =[];
-const play = () => {
-    if (playdiv.firstChild.nextElementSibling.nextElementSibling.firstElementChild.classList.contains("fa-play")) {
-        playdiv.firstChild.nextElementSibling.nextElementSibling.firstElementChild.classList.remove("fa-play");
-        playdiv.firstChild.nextElementSibling.nextElementSibling.firstElementChild.classList.add("fa-pause");
-        song.play();
+let songdataarray = [];
+const splay = () => {
+    if (splaydiv.firstChild.nextElementSibling.nextElementSibling.firstElementChild.classList.contains("fa-play")) {
+        splaydiv.firstChild.nextElementSibling.nextElementSibling.firstElementChild.classList.remove("fa-play");
+        splaydiv.firstChild.nextElementSibling.nextElementSibling.firstElementChild.classList.add("fa-pause");
+        ssong.play();
     }
 
     // if(playdiv.firstChild.nextElementSibling.nextElementSibling.firstElementChild.classList.contains("fa-pause"))
     else {
-        playdiv.firstChild.nextElementSibling.nextElementSibling.firstElementChild.classList.remove("fa-pause");
-        playdiv.firstChild.nextElementSibling.nextElementSibling.firstElementChild.classList.add("fa-play");
-        song.pause()
+        splaydiv.firstChild.nextElementSibling.nextElementSibling.firstElementChild.classList.remove("fa-pause");
+        splaydiv.firstChild.nextElementSibling.nextElementSibling.firstElementChild.classList.add("fa-play");
+        ssong.pause()
     }
 }
 
 function loadrange() {
     setInterval(() => {
-        range.value = song.currentTime;
-        cduration.innerHTML = Number.parseFloat(`${song.currentTime / 60}`).toFixed(2)
+        srange.value = ssong.currentTime;
+        scduration.innerHTML = Number.parseFloat(`${song.currentTime / 60}`).toFixed(2)
+
     }, 500);
-    range.oninput = () => {
-        if (song)
-            song.pause();
+    srange.oninput = () => {
+        if (ssong)
+            ssong.pause();
         song.play()
-        song.currentTime = range.value;
-        playdiv.firstChild.nextElementSibling.nextElementSibling.firstElementChild.classList.remove("fa-play");
-        playdiv.firstChild.nextElementSibling.nextElementSibling.firstElementChild.classList.add("fa-pause")
+        song.currentTime = srange.value;
+        splaydiv.firstChild.nextElementSibling.nextElementSibling.firstElementChild.classList.remove("fa-play");
+        splaydiv.firstChild.nextElementSibling.nextElementSibling.firstElementChild.classList.add("fa-pause")
     }
 }
-const popupfornpbtn=(songdata)=>{
-        setsong(songdata.downloadUrl[1].link);
-        let playerimg = document.getElementById('player-img');
-        let playerdetails = document.getElementsByClassName('player-details')
-        playerimg.setAttribute("src", `${songdata.image[2].link}`);
-        tduration.innerHTML = Number.parseFloat(`${songdata.duration / 60}`).toFixed(2)
-        range.max = songdata.duration;
-        sname = songdata.name.split(" ");
-        playerdetails[0].firstElementChild.innerHTML = `${sname[0]} ${(sname[1] == undefined) ? " " : sname[1]}`;
-        playerdetails[0].firstElementChild.nextElementSibling.innerHTML = `${songdata.primaryArtists}`;
-        let backbtn = document.getElementsByClassName('back-btn')[0];
-        // backbtn.addEventListener("click", () => {
-        //     pop.classList.remove('active');
-        //     if (song) {
-        //         song.pause()
-        //         playdiv.firstChild.nextElementSibling.nextElementSibling.firstElementChild.classList.remove("fa-pause");
-        //         playdiv.firstChild.nextElementSibling.nextElementSibling.firstElementChild.classList.add("fa-play");
-        //     }
-        // })
-        playdiv.firstChild.nextElementSibling.nextElementSibling.addEventListener("click", (e) => {
-            
-        })
-    }
-const setsong = (link) => {
-    song = new Audio(link);
-    play();
-    loadrange()
-}
-playdiv.firstChild.nextElementSibling.nextElementSibling.addEventListener("click", (e) => {
-    play();
-})
-function popup(songdata) {
-    pop.classList.toggle('active');
+const spopupfornbtn = (songdata) => {
     setsong(songdata.downloadUrl[1].link);
     let playerimg = document.getElementById('player-img');
     let playerdetails = document.getElementsByClassName('player-details')
     playerimg.setAttribute("src", `${songdata.image[2].link}`);
-    tduration.innerHTML = Number.parseFloat(`${songdata.duration / 60}`).toFixed(2)
+    stduration.innerHTML = Number.parseFloat(`${songdata.duration / 60}`).toFixed(2)
     range.max = songdata.duration;
     sname = songdata.name.split(" ");
     playerdetails[0].firstElementChild.innerHTML = `${sname[0]} ${(sname[1] == undefined) ? " " : sname[1]}`;
     playerdetails[0].firstElementChild.nextElementSibling.innerHTML = `${songdata.primaryArtists}`;
     let backbtn = document.getElementsByClassName('back-btn')[0];
+    // backbtn.addEventListener("click", () => {
+    //     pop.classList.remove('active');
+    //     if (song) {
+    //         song.pause()
+    //         playdiv.firstChild.nextElementSibling.nextElementSibling.firstElementChild.classList.remove("fa-pause");
+    //         playdiv.firstChild.nextElementSibling.nextElementSibling.firstElementChild.classList.add("fa-play");
+    //     }
+    // })
+    splaydiv.firstChild.nextElementSibling.nextElementSibling.addEventListener("click", (e) => {
+
+    })
+}
+const ssetsong = (link) => {
+    ssong = new Audio(link);
+    play();
+    loadrange()
+}
+splaydiv.firstChild.nextElementSibling.nextElementSibling.addEventListener("click", (e) => {
+    play();
+})
+function popup(songdata) {
+    spop.classList.toggle('active');
+    ssetsong(songdata.downloadUrl[1].link);
+    let playerimg = document.getElementById('player-img');
+    let playerdetails = document.getElementsByClassName('player-details')
+    playerimg.setAttribute("src", `${songdata.image[2].link}`);
+    stduration.innerHTML = Number.parseFloat(`${songdata.duration / 60}`).toFixed(2)
+    srange.max = songdata.duration;
+    sname = songdata.name.split(" ");
+    playerdetails[0].firstElementChild.innerHTML = `${sname[0]} ${(sname[1] == undefined) ? " " : sname[1]}`;
+    playerdetails[0].firstElementChild.nextElementSibling.innerHTML = `${songdata.primaryArtists}`;
+    let backbtn = document.getElementsByClassName('back-btn')[0];
     backbtn.addEventListener("click", () => {
-        pop.classList.remove('active');
-        if (song) {
-            song.pause()
-            playdiv.firstChild.nextElementSibling.nextElementSibling.firstElementChild.classList.remove("fa-pause");
-            playdiv.firstChild.nextElementSibling.nextElementSibling.firstElementChild.classList.add("fa-play");
+        spop.classList.remove('active');
+        if (ssong) {
+            ssong.pause()
+            splaydiv.firstChild.nextElementSibling.nextElementSibling.firstElementChild.classList.remove("fa-pause");
+            splaydiv.firstChild.nextElementSibling.nextElementSibling.firstElementChild.classList.add("fa-play");
         }
     })
-    
+
 }
 
-const addsearchevent=()=>{
-    let cards = document.getElementsByClassName('search-list');
-    cards = [...cards];
-    console.log(cards)
-    cards.forEach((e,i)=>{
-        e.addEventListener("click",()=>{
-            popup(songdataarray[i]);
+const addsearchevent = () => {
+    let scards = document.getElementsByClassName('search-list');
+    let acards = document.getElementsByClassName('card-album');
+    scards = [...scards];
+    scards.forEach((e, i) => {
+        e.addEventListener("click", () => {
+            addtodown(songdataarray[i], i, songdataarray);
             playindex = i;
         })
     })
+    acards = [...acards]
+    acards.forEach((e, i) => {
+        e.addEventListener("click", async () => {
+            albumpopups(e.lastElementChild.lastElementChild.innerHTML)
+        })
+    })
 }
-const createcard = ((tdata) => {
+const createcard = ((which, tdata, index) => {
+    if (which == 'songs') {
+        parentdiv = document.getElementById('s-songs')
         let li = document.createElement('li');
         songdataarray.push(tdata)
         console.log(tdata)
-        li.setAttribute("class","card-song search-list");
-        li.innerHTML =`
+        li.setAttribute("class", "card-song search-list");
+        li.innerHTML = `
             <div class="song-s-img">
                 <img src="${tdata.image[1].link}" alt="">
             </div>
@@ -119,83 +128,138 @@ const createcard = ((tdata) => {
             </div>
         `
         parentdiv.appendChild(li)
-    })
-const fetchdata = async (id) => {
-        response = await fetch(`https://saavn.me/search/songs?query=${id}&page=1&limit=15546`)
-    
-        data = await response.json();
-        results = data.data.results
-        if(data)
-        {
-           await  data.data.results.forEach((e,index)=>{
+    }
+    else if (which == 'playlists' || which == 'albums') {
+        parentdiv = document.getElementById('s-album')
+        parentdiv.style.display = "flex";
+        parentdiv.style.flexWrap = "wrap";
+        parentdiv.style.flexDirection = "row";
 
-               createcard(data.data.results[index]);
-           })
-           addsearchevent();
+        let e = tdata;
+        if (e.songCount > 0) {
+            let li = document.createElement('li');
+            li.setAttribute("class", "card-album");
+            li.innerHTML = `
+                    <div class="album-img"> 
+                        <img src="${e.image[2].link}" alt="">
+                    </div>
+                    <div class="a-details">
+                        <h1>${e.name}</h1>
+                        <h4>${e.songCount} Songs</h4>
+                        <p class="hidden">${e.id}</p>
+                    </div>`;
+            parentdiv.appendChild(li);
+            if ((index + 1) > tdata.length - 1) {
+                addevent("toptrending")
+            }
         }
     }
+})
+const fetchdata = async (which, id) => {//which refers to sog,album.playlisyt
+    response = await fetch(`https://saavn.me/search/${which}?query=${id}&page=1&limit=50`)
+    // response = await fetch(`https://saavn.me/search/albums?query=${id}&page=1&limit=50`)
+    data = await response.json();
+    results = data.data.results
+    if (data) {
+        await data.data.results.forEach((e, index) => {
+            createcard(which, data.data.results[index], index);
+        })
+        addsearchevent();
+    }
+}
+const fetchalbumdata = async (id) => {//*which refers to song,album.playlisyt
+    // response = await fetch(`https://saavn.me/search/${which}?query=${id}&page=1&limit=50`)
+   let response = await fetch(`https://saavn.me/search/albums?query=${id}&page=1&limit=50`)
+    data = await response.json();
+    let createcard = (tdata,index,data) => {
+        parentdiv = document.getElementById('s-album')
+        parentdiv.style.display = "flex";
+        parentdiv.style.flexWrap = "wrap";
+        parentdiv.style.flexDirection = "row";
+
+        let e = tdata;
+        let li = document.createElement('li');
+        li.setAttribute("class", "card-album");
+        li.innerHTML = `
+                    <div class="album-img"> 
+                        <img src="${e.image[2].link}" alt="">
+                    </div>
+                    <div class="a-details">
+                        <h1>${e.name}</h1>
+                        <h4>${e.songCount} Songs</h4>
+                        <p class="hidden">${e.url}</p>
+                    </div>`;
+        parentdiv.appendChild(li);
+        if ((index + 1) > data.length - 1) {
+            addevent("albums")
+        }
+
+    }
+    data.data.results.forEach((e,index) => {
+        createcard(e,index,data.data.results)
+    })
+}
+
 let loader = document.getElementById('loader')
 if (input) {
     input.addEventListener("keydown", (e) => {
         if (e.key == "Enter") {
             parentdiv.innerHTML = ` `;
-            songdataarray.length=0;
-            if (song)
-                song.pause();
+            songdataarray.length = 0;
+            if (ssong)
+                ssong.pause();
             id = input.value;
-            fetchdata(id);
+            document.getElementById('s-songs').innerHTML = " "
+            document.getElementById('s-album').innerHTML = " "
+            // fetchdata('songs', id);
+            // fetchdata('playlists', id);
+            fetchalbumdata(id);
         }
     })
 }
-sbtn.addEventListener("click",()=>{
+sbtn.addEventListener("click", () => {
     parentdiv.innerHTML = ` `;
-    songdataarray.length=0;
-    if (song)
-        song.pause();
+    songdataarray.length = 0;
+    if (ssong)
+        ssong.pause();
     id = input.value;
-    fetchdata(id);
 })
-let prebtn = document.getElementsByClassName('prebtn');
-prebtn = [...prebtn];
-let nextbtn = document.getElementsByClassName('nextbtn');
-nextbtn = [...nextbtn];
-const addbtnevents = ()=>
-{   
-    nextbtn.forEach((e)=>{
-        e.addEventListener("click",()=>{
-            if (song)
-            song.pause();
+let sprebn = document.getElementsByClassName('prebtn');
+sprebn = [...sprebn];
+let snextbtn = document.getElementsByClassName('nextbtn');
+snextbtn = [...snextbtn];
+const saddbtnevents = () => {
+    snextbtn.forEach((e) => {
+        e.addEventListener("click", () => {
+            if (ssong)
+                ssong.pause();
             play();
-            if(playindex == songdataarray.length-1)
-            {
-                popupfornpbtn(songdataarray[0]);
-                playindex = 0;
+            if (splayindex == songdataarray.length - 1) {
+                spopupfornbtn(songdataarray[0]);
+                splayindex = 0;
             }
-            else
-            {
-            popupfornpbtn(songdataarray[playindex+1]);
-            playindex = playindex+1;
-            console.log(playindex)
+            else {
+                spopupfornbtn(songdataarray[splayindex + 1]);
+                splayindex = splayindex + 1;
+                console.log(splayindex)
             }
-    })
+        })
     });
-    prebtn.forEach((e)=>{
-        e.addEventListener("click",()=>{
-            if (song)
-            song.pause();
+    sprebn.forEach((e) => {
+        e.addEventListener("click", () => {
+            if (ssong)
+                ssong.pause();
             play();
-            if(playindex == 0)
-            {
-                popupfornpbtn(songdataarray[songdataarray.length-1]);
-                playindex = songdataarray.length-1;
+            if (splayindex == 0) {
+                spopupfornbtn(songdataarray[songdataarray.length - 1]);
+                splayindex = songdataarray.length - 1;
             }
-            else
-            {
-            popupfornpbtn(songdataarray[playindex-1]);
-            playindex = playindex-1;
-            console.log(playindex)
+            else {
+                spopupfornbtn(songdataarray[splayindex - 1]);
+                splayindex = splayindex - 1;
+                console.log(splayindex)
             }
-    })
+        })
     });
 }
-addbtnevents();
+saddbtnevents();

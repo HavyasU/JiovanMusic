@@ -48,10 +48,10 @@
     }
 
     .n-nav {
-        width: 500px;
+        width: 90vw;
         height: 4rem;
-        border-bottom: 3px solid rgb(251, 75, 213);
         box-shadow: 0 5px 20px black;
+        transition: all .5s cubic-bezier(0.165, 0.84, 0.44, 1);
     }
 
 
@@ -62,7 +62,8 @@
         margin: 0;
         padding: 0;
         display: flex;
-        justify-content: last;
+        justify-content: end;
+        align-items: center;
         padding-right: 3rem;
         gap: 2px;
     }
@@ -85,9 +86,12 @@
         height: 50px;
         position: absolute;
         left: 1rem;
+        top: .2rem;
     }
 
     .n-ul a {
+        display: block;
+        width: 15rem;
         font-size: 1rem;
         padding: 0;
         border-radius: 2px;
@@ -95,6 +99,7 @@
         text-align: center;
         color: rgb(243, 242, 242);
         padding: 0;
+        padding: 5px 15px;
     }
 
     footer {
@@ -154,7 +159,7 @@
 
     .album-card-container {
         width: 100%;
-        display: grid;
+        display: gri;
         grid-template: auto auto;
         justify-content: start;
         overflow: scroll;
@@ -192,7 +197,7 @@
 
     .album-popup {
         width: 100vw;
-        background-color:  rgb(45, 45, 42);
+        background-color: rgb(45, 45, 42);
     }
 
     .albm-details {
@@ -268,7 +273,10 @@
         width: 85%;
         height: auto;
     }
-    .player h1,h3,p{
+
+    .player h1,
+    h3,
+    p {
         color: #ffffff;
     }
 
@@ -360,13 +368,258 @@
     #play-btn {
         min-width: 4.5rem;
     }
-    .albm-songs
-    {
+
+    .albm-songs {
         background-color: rgb(45, 45, 42);
     }
-    .n-li
-    {
+
+    .n-li {
         padding-bottom: 5px;
     }
-    
+
+    #desk-menu {
+        display: block;
+    }
+
+
+    #logo {
+        width: 3rem;
+        height: 3rem;
+        position: relative;
+        top:-3px;
+        left: -150px;
+    }
+    .n-nav span
+    {
+        width: 4rem;
+        height: 3rem;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        text-align: end;
+    }
+    .mode-change::before
+    {
+        padding: 10px;
+    }
+    .mode-changr,.mode-changer-div
+    {
+        height: 3rem;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+    }
+    .n-nav .n-li,span 
+    {
+        width: 3rem;
+        display: flex;
+        padding: 0;
+        margin: 0;
+    }
+    .h1,.fs-2
+    {
+        padding: 0;
+        margin: 0;
+    }
+    #into
+    {
+        display: none;
+        width:fit-content;
+        position: absolute;
+        top: .5rem;
+        right: .1rem;
+        background-color: #f9efef;
+        padding: 2px 3px;
+        border-radius: 50%;
+        margin-right:0;
+    }
+    #mob-menu {
+        display: none;
+        width: 13rem;
+        height: 13rem;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        border-radius: 13px;
+        border: 2px solid white;
+        padding: 0;
+        position: fixed;
+        z-index: 8;
+        top: 1.6rem;
+        left: auto;
+        transform: none;
+        right: 3.4rem;
+        box-shadow: 0 10px 10px rgb(0, 0, 0);
+        border-top-right-radius: 0;
+    }
+
+    #mob-menu .n-nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #mob-menu .n-ul {
+        width: 100%;
+        height: 90%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 0;
+        margin: 0;
+    }
+
+    #mob-menu .n-ul .n-li {
+        width: 90%;
+        height: 2rem;
+        display: flex;
+        margin: 0;
+        padding: 10px 0;
+        margin: 5px 0;
+        border: 2px solid rgb(232, 236, 237);
+        box-shadow: 0 0 5px rgb(232, 236, 237);
+        z-index: 10;
+        position: relative;
+        top: 10px;
+        left: 2px;
+        border-radius: 3px;
+    }
+
+    .n-li a {
+        width: fit-content;
+        font-size: 1rem;
+    }
+    #list-btn
+    {
+        padding:0;
+        margin: 0;
+        font-size: 40px;
+    }
+    .active {
+        display: block;
+    }
+    #logo
+    {
+        top: -2px;
+    }
+    .sortbuttons
+    {
+        position: relative;
+        left: 50%;
+        top:4rem;
+        transform: translate(-50%);
+        width:99vw;
+        height: 10rem;
+        display: flex;
+        padding: 0;
+        margin: 0;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;   
+        align-content: center; 
+        gap: 1rem;
+    }
+    .s-button{
+        background-color: transparent;
+        border-radius: 10px;
+        width: 8rem;
+        background-color: rgb(202, 199, 199);
+        box-shadow: 0 10px 20px black;
+        height: 3rem;
+        font-size: 20px;
+        padding: .4rem .5rem;
+        margin:0;
+        text-align: center;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        border: 3px solid rgb(255, 255, 255);
+    }
+    .down-player
+    {
+        width: 100vw;
+        padding: 0 .5rem;
+    }
+    .down-bottom
+    {
+        height: 5rem;
+        padding: 0;
+        margin: 0;
+    }
+    .down-info
+    {
+        padding: 0;
+        margin: 0;
+        width: 50vw;
+    }
+    .down-info .down-img
+    {
+        width: 45%;
+        height: 70px;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 10px;
+    }
+    .down-info .down-img img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 5px;
+    }
+    .down-info .down-details h1
+    {
+        padding: 0; 
+        margin: 0;
+        width: 90%;
+        height: 2rem;
+        text-align: start;
+        font-size: 1.2rem;
+        overflow: hidden;
+        padding-top: 6px;
+        display: block;
+        font-family:Arial, Helvetica, sans-serif;
+        font-weight: 800;
+    }
+     .down-info .down-details h3
+     {
+        font-size: .8rem;
+        height: 1.5rem;
+        text-align: start;
+        padding-top: 0px;
+     }
+    .down-controls
+    {
+        width: 30vw;
+        display:flex;
+        font-size: 10px;
+    }
+    .down-controls span
+    {
+        width: fit-content;
+        height: 2.5rem;
+        font-size: 1.8rem;
+        margin: 0px 3px;
+        padding: 0 18px;
+    }
+    .down-controls span:nth-child(3)
+    {
+        width: 4rem;
+        height: 3.7rem;
+        padding: 0px 20px;
+    }
+    .down-controls span:nth-child(1) , span:nth-child(5),span:nth-child(6)
+    {
+        display: none;
+    }
+    .album-s-song .s-details h4
+    {
+        font-size: 2rem;
+    }
 }

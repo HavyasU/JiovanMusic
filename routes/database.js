@@ -3,15 +3,15 @@ const express = require('express')
 const dsroute = express.Router();
 const mongoose = require('mongoose');
 const connectdb = async()=>{
-  await mongoose.connect("mongodb://mongo:kkZqSB305jF8g2PRRp0L@containers-us-west-25.railway.app:6834" ,{
+  await mongoose.connect("" ,{
     dbName: 'jiovan',
     retryWrites: true,
     w: 'majority'
   })
 }
-connectdb().then(()=> console.log('i think conected')).catch((err)=>{
-  console.log(err)
-});
+// connectdb().then(()=> console.log('i think conected')).catch((err)=>{
+//   console.log(err)
+// });
 
 let reviewschema = mongoose.Schema({
   name:String,

@@ -3,25 +3,63 @@
   padding: 0;
   box-sizing: border-box;
 }
+*{
+  transition: all .1 cubic-bezier(0.165, 0.84, 0.44, 1);
+ }
 
 body {
   width: 100%;
   height: 100vh;
   padding-top: 60px;
 }
-
+.sortbuttons
+{
+  width: 90%;
+  position: absolute;
+  top: 8rem;
+  left: 6rem;
+}
+.s-button {
+  background-color: rgb(215, 210, 210); /* Green */
+  border: none;
+  color: rgb(0, 0, 0);
+  padding: 7px 20px;
+  text-align: center;
+  font-weight: 800;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 4px;
+  margin-right: 2rem;
+  box-shadow: 0 0 10px rgb(255, 253, 253);
+  cursor: pointer;
+}
+.button-active ,.s-button:hover
+{
+  background-color: rgb(97, 228, 207);
+  color: rgb(0, 0, 0);
+  box-shadow: 0 0 10px rgb(70, 209, 255);
+  border: 2px solid rgb(255, 255, 255);
+}
 .n-nav{
-  width:100%;
-  height: 79px;
-  background-color: rgb(245, 251, 255);
+  width:90%;
+  height: 75px;
+  background-color: rgb(95, 165, 208);
+  background: linear-gradient(50deg,rgb(49, 40, 227),rgb(23, 173, 207),rgb(208, 8, 215));
   position: fixed;
   top: 0;
-  left: 0;
+  left: 50%;
+  transform: translate(-50%);
+  margin-top: 20px;
   padding: 0;
   z-index: 1;
-  border-bottom: 5px solid rgb(255, 61, 213);
   box-shadow: 0 5px 14px rgb(0, 0, 0);
   color: rgb(255, 255, 255);
+  border-radius: 2rem;
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border: 3px solid rgb(255, 255, 255);
 }
 
 .n-ul {
@@ -33,12 +71,13 @@ body {
   padding-right: 20px;
 
 }
-
+h1{
+  font-size: 2rem;
+}
 .n-li {
   width: 10%;
   height: 60%;
   list-style: none;
-  background-color: #de3be1;
   padding: 4px 15px;
   margin: auto 0;
   margin-right: 20px;
@@ -263,15 +302,15 @@ footer {
  }
  .load{
   position: fixed;
+  top: .0;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   background-color: #333;
   display: none;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   z-index:1;
-  margin-top: .5rem;
  }
  .hide{
   display:none;
@@ -353,4 +392,42 @@ footer {
 .mode-changer{
   color: rgb(0, 0, 0);
   font-size: 30px;
+ }
+ .hidden{
+  display: none;
+ }
+ .dark
+ {
+  background-color: rgb(45, 45, 42);
+ }
+ #into
+ {
+  display: none;
+ }
+ 
+ #desk-menu
+ {
+  display: flex;
+ }
+ #mob-nav
+ {
+  display: none;
+ }
+ #mob-menu
+ {
+  display: none;
+ }
+ #logo
+ {
+    width: 60px; 
+    height: 60px; 
+    object-fit: cover;
+    object-position: 60% 50%; 
+    box-shadow: inset 0 -20px 10px rgb(206, 215, 215);
+    overflow: hidden;
+ }
+
+ #body
+ {
+  transition: all .5s cubic-bezier(0.165, 0.84, 0.44, 1);
  }

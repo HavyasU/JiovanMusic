@@ -17,9 +17,7 @@ background-color: white;
 background-color: white;
 }
 
-*{
-    color: white;
-}
+
 .mode-changer
 {
     color: white;
@@ -49,4 +47,24 @@ background-color: white;
 .inp-container input 
 {
     color:black;
+}
+.albm-songs
+{
+    background: rgb(45, 45, 42);
+}
+.album-popup
+{
+    background: rgb(45, 45, 42);
+}
+#container{
+    background:linear-gradient(70deg,rgb(201, 41, 215),rgb(220, 126, 27));
+}
+.song-play-btn .fa-play
+{
+    color: white;
+}
+.down-player
+{
+    color: white;
+    box-shadow: 0 -10px 20px rgb(0, 0, 0);
 }

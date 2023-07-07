@@ -235,14 +235,15 @@ body {
     align-items: center;
     margin: 0 1rem;
     transition: all 1s cubic-bezier(0.23, 1, 0.320, 1)
+    
 }
 
 .song-s-img img {
-    width: 95%;
-    height: 4.5rem;
+    width: 100%;
+    height:100%;
     margin: auto;
     border-radius: 3px;
-    border: 1px solid rgb(218, 214, 214);
+    object-fit: fill;
 }
 .album-song:hover .song-s-img{
     transform: rotateY(10deg) rotateX(2deg) scale(1.090);
@@ -257,7 +258,7 @@ body {
 .s-details h1 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: aliceblue;
-    margin-top: 10px;
+    margin-top:3px;
     width: 100%;
 }
 
@@ -267,7 +268,7 @@ body {
     flex-wrap: wrap;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: aliceblue;
-    margin: 5px 0;
+    margin: 2px 0;
 }
 
 .song-head,
@@ -295,7 +296,7 @@ body {
     width: 80%;
     display: grid; 
     grid-template-columns: auto auto auto auto;
-    margin: 0 auto;
+    margin: 8rem auto;
     padding: 1rem 0;
     justify-content: center; 
 }
@@ -346,18 +347,22 @@ body {
 }
 
 .a-details h1 {
+    font-size: 28px;
     width: 95%;
     text-align: start;
     padding-left: 10px;
     margin: 0 auto;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .a-details h4 {
+    font-size: 17px;
     width: 95%;
     text-align: start;
     padding-left: 10px;
     margin: .8rem auto;
+    opacity: .7;
+    color:wheat;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -368,7 +373,7 @@ body {
     position: fixed;
     top: 50%;
     left: 50%;
-    background-color: antiquewhite;
+    background-color: rgb(160, 145, 126);
     transform: translate(-50%, -50%);
     overflow: scroll;
     z-index: 2;
@@ -382,21 +387,21 @@ body {
 
 .a-img-div {
     width: 100%;
-    height: 10%;
     background-color: rgb(245, 154, 154);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     background: linear-gradient(40deg, #e19d4b 0%, #e670a5 50%, #b1a5e6 100%);
-
 }
 
 .albm-img {
-    width: 35%;
+    width: 20%;
     height: 10%;
     margin: 0;
     padding: 0; 
+    margin-right:5rem;
+    margin-left:3rem;
 }
 
 .albm-img img {
@@ -418,49 +423,60 @@ body {
 }
 
 .albm-details h2 {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     color: white;
+}
+.albm-songs
+{
+    height: 100%;
+    margin-top: 0;
+    padding-bottom: 10rem;
 }
 
 .album-song {
-    width: 90rem;
-    height: 6rem;
+    width: 90%;
+    height: 5rem;
     display: flex;
-    background-color: rgb(81, 129, 243);
     list-style: none;
     margin: .6rem 1rem;
     border-radius: 8px;
-    box-shadow: 0px 8px 20px rgb(127, 122, 122);
-    border: 2px solid white;
-    margin: .5rem auto;
+    margin: 0 auto;
     z-index: 0;
     transition: all 1s cubic-bezier(0.23, 1, 0.320, 1);
-    background-image: linear-gradient(40deg, #3e58dcdc 0%, #C850C0 46%, #e6a62d 100%);
+    margin-top: 10px;
+    justify-content: space-around;
 }
-
 .album-song:hover {
     transform: rotateY(10deg) rotateX(2deg) scale(1.020);
-    box-shadow: 0px 0px 25px 15px rgba(135, 130, 130, 0.663);
+    background-color: black;
+}
+.album-song:hover .song-play-btn{
+    visibility:visible;
 }
 
-.album-song .song-s-img {
-    width: 7rem;
-    height: 6rem;
-    margin: 0;
+.album-song .song-s-img{
+    width: 60px;
+    height: 55px;
+    margin: auto;
     padding: 0;
-    padding-left: 3rem;
+    margin-left: 3rem;
     overflow: hidden;
+    border: 0px;
+    background-color: rgb(79, 74, 74);
+    border-radius: 4px;
+    cursor: pointer;
 }
 
 .album-song .s-details {
-    width: 100%;
+    margin: 0 auto;
+    margin-left: -8rem;
+    align-items: start;
     padding-left: 3rem;
-    overflow: hidden;
 }
-
 .album-song .s-details h1 {
-    margin: 8px 0;
-    margin-top: 1pc;
+    font-size: 1.2rem;
+    margin: 10px 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 .album-popup.active {
@@ -487,4 +503,16 @@ body {
     position: absolute;
     left: 3rem;
 }
-
+.song-play-btn
+{
+    width: 5rem;
+    color: rgb(255, 252, 252);
+    display:flex;
+    text-align: center;
+    justify-content: center;
+    align-items:center;
+    font-size: 30px;
+    position: relative;
+    right: 5rem;
+    visibility: hidden;
+}

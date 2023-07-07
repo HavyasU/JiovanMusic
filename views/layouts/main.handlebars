@@ -6,30 +6,68 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="viewport" content="width=device-width, user-scalable=no">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/trending.css">
+  <link rel="stylesheet" href="css/downandmenu.css">
+  <link rel="stylesheet" href="css/sidenav.css">
   <link rel="stylesheet" href="css/mobileview.css">
-  <link rel="icon" type="image/png" id="favicon" href="image/music.png.png">
+  <link rel="stylesheet" id="changer" href="css/darkmode.css">
+  <link rel="icon" type="image/png" href="image/music.png.png">
   <title>Jiovan</title>
 </head>
-
+<script>
+      if( localStorage.getItem('mode') == 'white')
+      {
+        changer.href = " "
+      }
+</script>
 <body id="body">
-  <nav class="n-nav">
+  <nav class="n-nav" id="desk-menu">
     <ul class="n-ul">
-      <img id="logo" src="https://www.freepnglogos.com/uploads/apple-music-logo-circle-png-28.png" alt="logo-image">
+      <img id="logo"  src="image/logo.png" alt="logo-image">
       {{!-- <li class="n-li"> <a href="#" id="jiovan" style="border:none; ">JIOVAN</a></li> --}}
-      <li class="n-li"> <a class="nav-link" href="/" id="home">Home</a></li>
+      {{!-- <li class="n-li"> <a class="nav-link" href="/" id="home">Home</a></li>
+      
       <li class="n-li"> <a class="nav-link" href="/search" id="search">Search</a></li>
-      <li class="n-li"> <a class="nav-link" href="/RateUs" id="rateus">Rate Us</a></li>
-      <li class="n-li"><i class="fa-solid fa-circle-half-stroke mode-changer"></i></li>
-      
-      
+      <li class="n-li"> <a class="nav-link" href="/RateUs" id="rateus">Rate Us</a></li> --}}
+      <li class="n-li  mode-changer-div"><i class="fa-solid fa-regular fa-circle-half-stroke mode-changer"></i></li>
+        <span class="navbar-brand mb-0 h1 fs-2 "><i class="fa-solid fw-10 fa-list" id="listbtn"></i>  &nbsp;&nbsp;&nbsp;</span>
     </ul>
   </nav>
+ 
+         <div class="sidenav">
+        <nav class="navbar bg-body-tertiary exit-btn">
 
-  {{{body}}}
+            <div class="container-fluid">
+                <a class="navbar-brand mb-0 h1 pl-10" ><i class="fa-sharp fa-solid fa-circle-xmark"></i></a>
+            </div>
+        </nav>
+
+        <nav class="navbar bg-body-tertiary">
+
+            <div class="container-fluid">
+                <a class="navbar-brand mb-0 h1" href="/"><i class="fa-solid fa-home"></i> &nbsp;&nbsp;&nbsp;<b>Home</b></a>
+            </div>
+        </nav>
+
+        <!-- As a heading -->
+        <nav class="navbar  bg-body-tertiary">
+            <div class="container-fluid" id="search-btn-div">
+                <a class="navbar-brand mb-0 h1"><i class="fa-solid fa-search"></i> &nbsp;&nbsp;&nbsp;<b>Search</b></a>
+            </div>
+        </nav>
+
+        <nav class="navbar  bg-body-tertiary">
+            <div class="container-fluid" id="rate-btn-div">
+                <a class="navbar-brand mb-0 h1"  ><i class="fa-solid fa-users"></i>  &nbsp;&nbsp;&nbsp;<b>Rate Us</b></a>
+            </div>
+        </nav>
+    </div>
+{{{body}}}
   <footer id="footer">
     <div class="footer-container">
       <div class="developer-info">
@@ -59,10 +97,61 @@
     </div>
   </footer>
 
+
+
+<div class="down-player">
+            <div class="down-up">
+                <input type="range" name="" id="down-range" value="0">
+            </div>
+            <div class="down-bottom">         
+                <div class="down-info">
+                    <div class="down-img">
+                        <img src="image/logo.png" alt="" class="src" id="down-img">
+                    </div>
+                    <div class="down-details" id="down-details">
+                       <h1></h1>
+                       <h3></h3>
+                    </div>
+                </div>
+                <div class="down-controls">
+                    <span>
+                        <i class="fa-solid fa-backward"></i>
+                    </span>
+                    <span>
+                        <i class="fa-solid fa-backward-step"  id="down-pre-btn"></i>
+                    </span>
+                    <span>
+                        <i class="fa-solid fa-play"  id="down-play-btn"></i>
+                    </span>
+                    <span>
+                        <i class="fa-solid fa-forward-step"  id="down-next-btn"></i>
+                    </span>
+                    <span>
+                        <i class="fa-solid fa-forward"></i>
+                    </span>
+                    <span>
+                        <i class="fa-sharp fa-regular fa-heart" id="like-btn" onclick="like()"></i>
+                    </span>
+                </div>
+            </div>
+            
+        </div>
+
+
 </body>
 <script src="https://kit.fontawesome.com/f275a9cb1d.js" crossorigin="anonymous"></script>
 <script src="js/main.js" crossorigin="anonymous"></script>
+<script src="js/downandmenu.js" crossorigin="anonymous"></script>
+<script src="js/albumsearch.js" crossorigin="anonymous"></script>
 <script>
+  let listbtn =document.getElementById('listbtn');
+    listbtn.addEventListener("click",()=>{
+        document.getElementsByClassName('sidenav')[0].style.left = "0";
+    })
+    let exitbtn =document.getElementsByClassName('exit-btn')[0];
+    exitbtn.addEventListener("click",()=>{
+        document.getElementsByClassName('sidenav')[0].style.left = "-20rem";
+    })
   let home = document.getElementById('home')
   console.log(home)
   setInterval(()=>{
@@ -77,23 +166,6 @@
     case "RateUs": home.parentElement.nextElementSibling.nextElementSibling.classList.add('borderadd')
     break;
   }
-  },10)
-  
-
-    let ss  = document.createElement('link')
-    ss.setAttribute("rel","stylesheet")
-      ss.setAttribute("id","changer")
-      ss.setAttribute("href","css/darkmode.css")
-    document.body.appendChild(ss)
-  let modechanger = document.getElementsByClassName("mode-changer")[0];
-    let sslink = document.getElementById('changer');
-  
-modechanger.addEventListener("click",()=>{
-    sslink.toggleAttribute("href");
-    if(sslink.hasAttribute("href"))
-    {
-      sslink.setAttribute("href","css/darkmode.css")
-    }
-  })
-</script>
+  },10) 
+</script> 
 </html>
