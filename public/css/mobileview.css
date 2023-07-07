@@ -379,15 +379,15 @@
 
     #desk-menu {
         display: block;
+        overflow: visible;
     }
 
 
     #logo {
         width: 3rem;
         height: 3rem;
-        position: relative;
-        top:-3px;
-        left: -150px;
+        position: absolute;
+        top:1rem;
     }
     .n-nav span
     {
@@ -396,7 +396,9 @@
         display: flex;
         justify-content: end;
         align-items: center;
-        text-align: end;
+        text-align: start;
+        position: absolute;
+        right:1rem;
     }
     .mode-change::before
     {
@@ -404,6 +406,8 @@
     }
     .mode-changr,.mode-changer-div
     {
+        position: absolute;
+        right:5rem;
         height: 3rem;
         text-align: center;
         display: flex;
@@ -503,7 +507,7 @@
     }
     #logo
     {
-        top: -2px;
+        top:.4rem;
     }
     .sortbuttons
     {
