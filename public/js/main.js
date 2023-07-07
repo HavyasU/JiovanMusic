@@ -42,12 +42,12 @@ let sslink = document.getElementById('changer');
       }
    });
 //buttons of the nav in mob view
-let mobmenu = document.getElementById('mob-menu');
-let list = document.getElementById('list');
-let into = document.getElementById('into');
-list.addEventListener("click",()=>{
-  mobmenu.style.display = "flex"
-})
+// let mobmenu = document.getElementById('mob-menu');
+// let list = document.getElementById('list');
+// let into = document.getElementById('into');
+// list.addEventListener("click",()=>{
+//   mobmenu.style.display = "flex"
+// })
 // into.addEventListener("click",()=>{
 //   mobmenu.style.display = "none"
 // })

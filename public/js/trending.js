@@ -173,7 +173,6 @@ homepage()
 function addalbum(e) {
     let li = document.createElement('li');
     li.setAttribute("class", "card-album");
-    li.setAttribute("onclick", "albumpopup()");
     li.innerHTML = `
         <div class="album-img">
             <img src="${e.image[0].link}" alt="">
@@ -188,7 +187,6 @@ function addalbum(e) {
 function addplaylist(e, index, data) {
     let li = document.createElement('li');
     li.setAttribute("class", "card-album");
-    li.setAttribute("onclick", "albumpopup()");
     li.innerHTML = `
         <div class="album-img">
             <img src="${e.image[0].link}" alt="">
@@ -207,7 +205,7 @@ function addplaylist(e, index, data) {
 function addchart(e, index, data) {
     let li = document.createElement('li');
     li.setAttribute("class", "card-album card-chart");
-    li.setAttribute("onclick", "albumpopup()");
+    li.setAttribute("onclick", "");
     li.innerHTML = `
         <div class="album-img">
             <img src="${e.image[2].link}" alt="">
@@ -268,9 +266,7 @@ function setalbum(pdata) {
         <h1>${e.name}</h1>
         <h4>${e.primaryArtists}</h4> 
     </div>
-    <div class="song-play-btn" onclick="">
-    <span><i class="fa-solid fa-play" id="s-play-btn"></i></span>
-</div>`
+    `
         albm_songs.appendChild(li);
 
 

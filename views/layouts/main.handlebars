@@ -144,28 +144,13 @@
 <script src="js/downandmenu.js" crossorigin="anonymous"></script>
 <script src="js/albumsearch.js" crossorigin="anonymous"></script>
 <script>
-  let listbtn =document.getElementById('listbtn');
-    listbtn.addEventListener("click",()=>{
-        document.getElementsByClassName('sidenav')[0].style.left = "0";
-    })
-    let exitbtn =document.getElementsByClassName('exit-btn')[0];
-    exitbtn.addEventListener("click",()=>{
-        document.getElementsByClassName('sidenav')[0].style.left = "-20rem";
-    })
-  let home = document.getElementById('home')
-  console.log(home)
-  setInterval(()=>{
-      let loc = location.href.split("/").pop();
-      console.log(loc)
-  switch(loc)
-  {
-    case "": home.parentElement.classList.add('borderadd')
-    break;
-    case "search": home.parentElement.nextElementSibling.classList.add('borderadd')
-    break;
-    case "RateUs": home.parentElement.nextElementSibling.nextElementSibling.classList.add('borderadd')
-    break;
-  }
-  },10) 
-</script> 
+    let listbtn =document.getElementById('listbtn');
+      listbtn.addEventListener("click",()=>{
+          document.getElementsByClassName('sidenav')[0].style.left = "0";
+      })
+      let exitbtn =document.getElementsByClassName('exit-btn')[0];
+      exitbtn.addEventListener("click",()=>{
+          document.getElementsByClassName('sidenav')[0].style.left = "-20rem";
+      })
+</script>
 </html>
