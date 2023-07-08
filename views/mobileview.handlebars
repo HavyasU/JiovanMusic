@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jiovan</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+    <div class="nav">
+        <span><i class="fa-solid fa-home"></i></span>
+        <span><i class="fa-solid fa-search"></i></span>
+        <span><i class="fa-solid fa-music"></i></span>
+        <span><i class="fa-solid fa-user"></i></span>
+    </div>
+    <div class="top-nav">
+        <img src="logo.png" alt="">
+        <section class="search">
+            <span><i class="fa-solid fa-search"></i></span>
+            <input type="text" name="">
+        </section>
+    </div>
+    <div class="buttons">
+        <button class="btn">Albums</button>
+        <button class="btn">Charts</button>
+        <button class="btn">Trending</button>
+        <button class="btn">Viral</button>
+        <button class="btn">Popular</button>
+        <button class="btn">Kannada</button>
+        <button class="btn">Malayalam</button>
+        <button class="btn">Hindi</button>
+        <button class="btn">English</button>
+    </div>
+</body>
+<script src="https://kit.fontawesome.com/f275a9cb1d.js" crossorigin="anonymous"></script>
+<script>
+    let btn = document.getElementsByClassName('btn');
+    btn = [...btn]
+    btn.forEach((ele) => {
+         ele.addEventListener("click",()=>{
+            btn.forEach((ele) => {
+                ele.classList.remove('active-button')
+            })
+            ele.classList.add('active-button')
+            
+    })
+    });
+</script>
+</html>

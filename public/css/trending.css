@@ -299,6 +299,7 @@ body {
     margin: 8rem auto;
     padding: 1rem 0;
     justify-content: center; 
+    transition: all .5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .card-album {

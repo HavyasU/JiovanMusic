@@ -73,13 +73,13 @@ let sortbtnfetch = async (link) => {
     let data = await res.json();
     addsortfetchdata(data.data.results)
 }
-const addsortfetchdata = (data) => {
+let addsortfetchdata = (data) => {
 
     data.forEach((e, index) => {
         if (e.songCount > 0) {
             let li = document.createElement('li');
             li.setAttribute("class", "card-album");
-            li.setAttribute("onclick", "albumpopup()");
+            li.setAttribute("onclick", "");
             li.innerHTML = `
                 <div class="album-img">
                     <img src="${e.image[2].link}" alt="">

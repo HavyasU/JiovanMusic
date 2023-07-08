@@ -196,10 +196,12 @@ function addplaylist(e, index, data) {
             <h4>${e.songCount} Songs</h4>
             <p class="hidden">${e.id}</p>
         </div>`;
-    albumcardcontainer.appendChild(li);
+        setTimeout(()=>{
+       albumcardcontainer.appendChild(li);
+    },2000)
+    console.log(index+1 ,data.playlists.length - 1)
     if ((index + 1) > data.playlists.length - 1) {
-        addevent("playlist")
-
+        addevent("playlist");
     }
 }
 function addchart(e, index, data) {
@@ -216,14 +218,14 @@ function addchart(e, index, data) {
             <p class="hidden">${e.id}</p>
         </div>`;
 
-    albumcardcontainer.appendChild(li);
+     albumcardcontainer.appendChild(li)
     if ((index + 1) > data.charts.length - 1) {
         // console.log("data is "+ data)
         // console.log(data.charts)
         addevent("charts", data.charts);
     }
 }
-// let album = document.getElementsByClassName('album-popup');
+let album = document.getElementsByClassName('album-popup');
 function setalbum(pdata) {
 
     console.log("welcome")
@@ -280,9 +282,8 @@ function setalbum(pdata) {
 }
 const albumpopups = async (id) => {
     albumpop.innerHTML = " ";
-    albumpop.classList.toggle('active');
+    albumpop.classList.add('active');
     // console.log(id)
-
     let res = await fetch(`https://saavn.me/playlists?id=${id}`)
     // let res = await fetch(`https://saavn.me/albums?link=${link}`)
     let pdata = await res.json();
@@ -291,14 +292,19 @@ const albumpopups = async (id) => {
 }
 function addevent(id, songdata) {
     if (id == "playlist") {
+        setTimeout(()=>{
         
         let cardalbum = document.getElementsByClassName('card-album');
         cardalbum = [...cardalbum];
+            
+    
+        console.log(cardalbum)
         cardalbum.forEach((e, index) => {
             e.addEventListener("click", () => {
                 albumpopups(e.lastElementChild.lastElementChild.innerHTML)
             })
         })
+    },2000)
     }
     if (id == "albums") {
         console.log("album events added")
@@ -351,7 +357,7 @@ const loadalbum = (data) => {
     albumcardcontainer.innerHTML = " "
     data.playlists.forEach((e, index) => {
         if (e.songCount > 0)
-            addplaylist(e, index, data)
+            addplaylist(e, index, dataarray);
     })
     // if (data) 
     // data.albums.forEach((e, index) => {

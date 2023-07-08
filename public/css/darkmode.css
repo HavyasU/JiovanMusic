@@ -1,7 +1,7 @@
 .n-nav{
     background-color:  rgb(45, 45, 42);
 }
-#body
+#body,.album-card-container
 {
     background-color: rgb(45, 45, 42);
 }
@@ -57,6 +57,7 @@ background-color: white;
     background: rgb(45, 45, 42);
 }
 #container{
+    transition: all .5s cubic-bezier(0.165, 0.84, 0.44, 1);
     background:linear-gradient(70deg,rgb(201, 41, 215),rgb(220, 126, 27));
 }
 .song-play-btn .fa-play
@@ -67,4 +68,12 @@ background-color: white;
 {
     color: white;
     box-shadow: 0 -10px 20px rgb(0, 0, 0);
+}
+.s-button 
+{
+   background-color:#ced4da;
+}
+.album-card-container
+{
+    background-color: transparent;
 }

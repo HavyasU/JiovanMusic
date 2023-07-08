@@ -114,7 +114,7 @@
     }
 
     body {
-        padding-top: 3.5rem;
+        padding-top: 2rem;
     }
 
     .footer-container {
@@ -159,10 +159,9 @@
 
     .album-card-container {
         width: 100%;
-        display: gri;
-        grid-template: auto auto;
-        justify-content: start;
-        overflow: scroll;
+        display: flex;
+        flex-direction: column;
+        transition: all .5s cubic-bezier(0.165, 0.84, 0.44, 1);
     }
 
     .card-album {
@@ -215,6 +214,7 @@
 
     .album-song {
         width: 90%;
+        justify-content: center;
     }
 
     .album-song .s-details h1 {
@@ -294,15 +294,19 @@
 
     .card-song .s-details {
         margin: auto;
+        margin-left: 10px;
         overflow: scroll;
     }
 
     .card-song .s-details h1 {
         font-size: 1.3rem;
+        margin: 5px 0 0;
+        padding: 0;
     }
 
     .card-song .s-details h4 {
         font-size: .8rem;
+        margin: 5px 0;
     }
 
     .card-song .song-s-img img {
@@ -337,7 +341,7 @@
     }
 
     #s-songs .card-song .s-details {
-        margin: auto .5rem;
+        margin: 0;
     }
 
     .s-songs .card-song h1 {
@@ -346,6 +350,7 @@
 
     .s-song-details h4 {
         font-size: .5rem;
+
     }
 
     .player-btn {
@@ -372,7 +377,9 @@
     .albm-songs {
         background-color: rgb(45, 45, 42);
     }
-
+    .albm-songs .song-s-img {
+        margin: 10px;
+    };
     .n-li {
         padding-bottom: 5px;
     }
@@ -387,10 +394,10 @@
         width: 3rem;
         height: 3rem;
         position: absolute;
-        top:1rem;
+        top: 1rem;
     }
-    .n-nav span
-    {
+
+    .n-nav span {
         width: 4rem;
         height: 3rem;
         display: flex;
@@ -398,16 +405,17 @@
         align-items: center;
         text-align: start;
         position: absolute;
-        right:1rem;
+        right: 1rem;
     }
-    .mode-change::before
-    {
+
+    .mode-change::before {
         padding: 10px;
     }
-    .mode-changr,.mode-changer-div
-    {
+
+    .mode-changr,
+    .mode-changer-div {
         position: absolute;
-        right:5rem;
+        right: 5rem;
         height: 3rem;
         text-align: center;
         display: flex;
@@ -415,30 +423,33 @@
         align-items: center;
         font-size: 30px;
     }
-    .n-nav .n-li,span 
-    {
+
+    .n-nav .n-li,
+    span {
         width: 3rem;
         display: flex;
         padding: 0;
         margin: 0;
     }
-    .h1,.fs-2
-    {
+
+    .h1,
+    .fs-2 {
         padding: 0;
         margin: 0;
     }
-    #into
-    {
+
+    #into {
         display: none;
-        width:fit-content;
+        width: fit-content;
         position: absolute;
         top: .5rem;
         right: .1rem;
         background-color: #f9efef;
         padding: 2px 3px;
         border-radius: 50%;
-        margin-right:0;
+        margin-right: 0;
     }
+
     #mob-menu {
         display: none;
         width: 13rem;
@@ -496,72 +507,81 @@
         width: fit-content;
         font-size: 1rem;
     }
-    #list-btn
-    {
-        padding:0;
+
+    #list-btn {
+        padding: 0;
         margin: 0;
         font-size: 40px;
     }
+
     .active {
         display: block;
     }
-    #logo
-    {
-        top:.4rem;
+
+    #logo {
+        top: .4rem;
     }
-    .sortbuttons
-    {
-        position: relative;
-        left: 50%;
-        top:4rem;
-        transform: translate(-50%);
-        width:99vw;
-        height: 10rem;
-        display: flex;
+
+    .sortbuttons {
         padding: 0;
         margin: 0;
-        justify-content: center;
+        left: 0;
+        top: 5rem;
+        width: 100vw;
+        height: 100px;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: start;
+        flex-direction: row;
+        gap: .4rem;
         align-items: center;
-        flex-wrap: wrap;   
-        align-content: center; 
-        gap: 1rem;
+        overflow: scroll;
+        scroll-behavior: smooth;
+        
     }
-    .s-button{
+
+
+    .s-button {
         background-color: transparent;
-        border-radius: 10px;
-        width: 8rem;
+        border-radius: 47px;
+        min-width: fit-content;
         background-color: rgb(202, 199, 199);
         box-shadow: 0 10px 20px black;
         height: 3rem;
         font-size: 20px;
-        padding: .4rem .5rem;
-        margin:0;
+        padding: .3rem .7rem;
+        margin: 0;
         text-align: center;
         overflow: hidden;
         display: flex;
         justify-content: center;
         align-items: start;
         border: 3px solid rgb(255, 255, 255);
+        margin-left: 10px;
+        box-shadow: 0 5px 20px black;
+        background-color:#ced4da;
     }
-    .down-player
-    {
+
+    .down-player {
         width: 100vw;
         padding: 0 .5rem;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
     }
-    .down-bottom
-    {
+
+    .down-bottom {
         height: 5rem;
         padding: 0;
         margin: 0;
     }
-    .down-info
-    {
+
+    .down-info {
         padding: 0;
         margin: 0;
         width: 50vw;
     }
-    .down-info .down-img
-    {
+
+    .down-info .down-img {
         width: 45%;
         height: 70px;
         padding: 0;
@@ -571,15 +591,16 @@
         align-items: center;
         padding-top: 10px;
     }
-    .down-info .down-img img{
+
+    .down-info .down-img img {
         width: 100%;
         height: 100%;
         object-fit: contain;
         border-radius: 5px;
     }
-    .down-info .down-details h1
-    {
-        padding: 0; 
+
+    .down-info .down-details h1 {
+        padding: 0;
         margin: 0;
         width: 90%;
         height: 2rem;
@@ -588,42 +609,85 @@
         overflow: hidden;
         padding-top: 6px;
         display: block;
-        font-family:Arial, Helvetica, sans-serif;
+        font-family: Arial, Helvetica, sans-serif;
         font-weight: 800;
     }
-     .down-info .down-details h3
-     {
+
+    .down-info .down-details h3 {
         font-size: .8rem;
         height: 1.5rem;
         text-align: start;
         padding-top: 0px;
-     }
-    .down-controls
-    {
-        width: 30vw;
-        display:flex;
-        font-size: 10px;
     }
-    .down-controls span
-    {
+
+    .down-controls {
+        width: 30vw;
+        display: flex;
+        font-size:5px;
+        justify-content: flex-start;
+    }
+
+    .down-controls span {
         width: fit-content;
-        height: 2.5rem;
+        height: 2rem;
         font-size: 1.8rem;
         margin: 0px 3px;
-        padding: 0 18px;
+        padding: 0 10px;
     }
-    .down-controls span:nth-child(3)
-    {
+
+    .down-controls span:nth-child(3) {
         width: 4rem;
         height: 3.7rem;
         padding: 0px 20px;
     }
-    .down-controls span:nth-child(1) , span:nth-child(5),span:nth-child(6)
-    {
+
+    .down-controls span:nth-child(1),
+    span:nth-child(5),
+    span:nth-child(6) {
         display: none;
     }
-    .album-s-song .s-details h4
-    {
+
+    .album-s-song .s-details h4 {
         font-size: 2rem;
+    }
+    .album-card-container
+    {
+        background-color: white;
+        transition: all .5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    .card-album {
+        width: 20rem;
+        height: 6rem;
+        display: flex;
+        flex-direction: row;
+        border-radius: 13px;
+        margin: 6px auto;
+        box-shadow: 0 10px 10px rgb(45, 45, 42);
+    }
+
+    .album-img {
+        width: 40%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        padding: 2px 2px;
+        margin-left: 10px;
+    }
+    .a-details h1
+    {
+        padding: 0;
+    }
+    #body
+    {
+        transition: all .5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    .album-card-container
+    {
+        background-color: transparent;
+    }
+    .search-page .album-img {
+        width:40%;
+        height:100%;
+        margin-top: 10px;
     }
 }

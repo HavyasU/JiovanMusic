@@ -11,6 +11,7 @@ body {
   width: 100%;
   height: 100vh;
   padding-top: 60px;
+  transition: all .5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .sortbuttons
 {
@@ -18,6 +19,8 @@ body {
   position: absolute;
   top: 8rem;
   left: 6rem;
+  display: flex;
+  justify-content: center;
 }
 .s-button {
   background-color: rgb(215, 210, 210); /* Green */

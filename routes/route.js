@@ -10,8 +10,9 @@ const mongoose = require('mongoose')
 // app.use(express.static(path.join(__dirname, 'static')))
 // app.use(express.static(path.join(__dirname,'public')))
 router.get('/',(req,res)=>{
-    res.render('trending')
-})
+    res.render('trending'); 
+});
+
 
 router.get('/search',(req,res)=>{
     res.render('search')

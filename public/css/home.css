@@ -1,0 +1,124 @@
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background: rgb(25, 32, 77);
+    padding-top: 5rem;
+    background-color: rgb(54, 51, 51);
+}
+.nav {
+    width: 90vw;
+    height: 5rem;
+    background-color: rgb(90, 89, 89);
+    position: fixed;
+    bottom: 10px;
+    opacity: .8;
+    left: 50%;
+    transform: translate(-50%);
+    border-radius: 20px;
+    display: flrx;
+    justify-content: space-around;
+    gap: .8rem;
+    text-align: center;
+    align-content: center;
+}
+
+.nav span {
+    display: flex;
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0px 20px rgb(198, 198, 198)
+}
+
+.top-nav {
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    position: fixed;
+    top: 0;
+    background-color: rgb(161, 161, 161);
+
+}
+
+.top-nav img {
+    width: 4.5rem;
+    height: 4rem;
+    padding: 10px;
+}
+
+img {
+    object-fit: cover;
+}
+
+.top-nav section {
+    width: 75%;
+    height: 80%;
+    overflow: hidden;
+    background-color: rgb(90, 89, 89);
+    display: flex;
+    flex-direction: row;
+    border-radius: 4px;
+    margin: auto;
+}
+
+.top-nav section i {
+    width: 3.2rem;
+    height: 100%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.top-nav section input {
+    width: 83%;
+    outline: none;
+    border: none;
+    font-weight: 800;
+    padding: 0 10px;
+    font-size: 1.4rem;
+    background-color: rgb(90, 89, 89);
+}
+
+.buttons {
+    height:70px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: start;
+    flex-direction: row;
+    gap: .4rem;
+    align-items: center;
+    overflow: scroll;
+    scroll-behavior:smooth;
+}
+
+.buttons button {
+    width: fit-content;
+    height:2.5rem;
+    padding:6px 20px;
+    background-color: rgb(27, 167, 209);
+    background-color: rgb(90, 89, 89);
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    border-radius: 35px;
+    outline: none;
+    border: none;
+    margin-left:10px;
+    border: 2px solid white;
+    box-shadow: 0 0 5px white;
+    color: white;
+}
+.buttons .active-button
+{
+    background-color: rgb(39, 182, 195);
+    border: 2px solid white;
+    box-shadow: 0 0 5px white;
+} */

@@ -74,7 +74,8 @@
  width:85%;
  height:5rem;
  text-align: start;
- padding-top: .5rem;
+ padding-top: .2rem;
+ padding-left: 7px;
 }
 .down-info .down-details h1,h3{
     width: 100%;
@@ -87,7 +88,7 @@
 .down-info .down-details h1
 {
     width: 100%;
-    height: 2.2rem;
+    height: 2.7rem;
     overflow: scroll;
 }
 
