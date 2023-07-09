@@ -643,7 +643,7 @@
 
     .down-controls span:nth-child(1),
     span:nth-child(5),
-    span:nth-child(6) {
+    span:nth-child(7) {
         display: none;
     }
 

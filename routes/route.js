@@ -3,7 +3,11 @@ const port = process.env.PORT || 3000;
 const path = require('path')
 const app = express();
 // const mongoose = require('mongoose');
-const router = express.Router()
+const router = express.Router();
+const multer = require('multer');
+const ffmpeg = require('fluent-ffmpeg');
+const fs = require('fs');
+const upload = multer({ dest: 'uploads/' });
 // const express = require('express');
 const { getChart } = require('billboard-top-100');
 const mongoose = require('mongoose')
@@ -13,6 +17,31 @@ router.get('/',(req,res)=>{
     res.render('trending'); 
 });
 
+
+router.post('/convert', upload.single('file'), (req, res) => {
+  const { file } = req;
+  const { originalname } = file;
+  const filePath = `uploads/${originalname}`;
+
+  fs.rename(file.path, filePath, (err) => {
+    if (err) {
+      console.log(err);
+      return res.status(500).send(err);
+    }
+
+    ffmpeg(filePath)
+      .toFormat('mp3')
+      .on('error', (err) => {
+        console.log(err);
+        return res.status(500).send(err);
+      })
+      .on('end', () => {
+        console.log('Conversion complete');
+        return res.download(`${filePath}.mp3`);
+      })
+      .save(`${filePath}.mp3`);
+  });
+});
 
 router.get('/search',(req,res)=>{
     res.render('search')

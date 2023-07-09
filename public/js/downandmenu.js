@@ -1,4 +1,5 @@
-
+let playingsonglink = null;
+let playingsongname = null;
 let isplaying = false;
 let downimg = document.getElementById('down-img');
 let downdetails = document.getElementById('down-details');
@@ -9,7 +10,9 @@ let downnextbtn = document.getElementById('down-next-btn');
 let downbforbtn = downnextbtn.parentElement.nextElementSibling.firstElementChild;//forward
 let downrange = document.getElementById('down-range');
 let dsong=null;
-const setdsong = (link) => {
+const setdsong = (link,songname) => {
+    playingsonglink = link;
+    playingsongname = songname;
     if(isplaying)
      dsong.pause();
     dsong = new Audio(link);
@@ -20,11 +23,11 @@ const setdsong = (link) => {
     isplaying=true;
 }
 
-downplaybtn.parentElement.addEventListener("click",()=>{
+downplaybtn.parentElement.addEventListener("click",(e)=>{
     if(dsong!=null)
-    playd();
+    playd(e.target);
 })
-const playd = () => {
+const playd = (targetele) => {
     if (downplaybtn.classList.contains("fa-play")) {
         downplaybtn.classList.remove("fa-play");
         downplaybtn.classList.add("fa-pause");
@@ -37,8 +40,14 @@ const playd = () => {
         downplaybtn.classList.add("fa-play");
         dsong.pause();
         isplaying=false;
-    }
 }
+}
+let downdownloadbtn = document.getElementById('down-download-btn');
+downdownloadbtn.parentElement.addEventListener("click",()=>{
+    downloadsong(playingsonglink,playingsongname);
+    console.log("clicked btn");
+    downdownloadbtn.style.opacity =0.5;
+})
 function loadrangedown() {
     setInterval(() => {
         downrange.value = dsong.currentTime;
@@ -67,10 +76,12 @@ setInterval(() => {
 }, 500);
 let playingindex;
 const addtodown = (songdata,index,songarray) => {
+    let downdownloadbtn = document.getElementById('down-download-btn');
+    downdownloadbtn.style.opacity =1.0;
     downimg.setAttribute("src", `${songdata.image[2].link}`);
     downdetails.firstElementChild.innerHTML = songdata.name;
     downdetails.firstElementChild.nextElementSibling.innerHTML = songdata.primaryArtists;
-    setdsong(songdata.downloadUrl[1].link)
+    setdsong(songdata.downloadUrl[1].link,songdata.name)
     downrange.max = songdata.duration;
     playingindex=index;
     downsongarray=songarray;

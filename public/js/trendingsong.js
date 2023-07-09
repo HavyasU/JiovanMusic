@@ -54,7 +54,7 @@
 //         // console.log(data.data.results[0])
 //             createcard(data.data.results[0]);
 // }}
-
+document.getElementById('albumaddbtn').classList.add('button-active')
 let sortbutton = document.getElementsByClassName('s-button');
 sortbutton = [...sortbutton]
 sortbutton.forEach((ele)=>{

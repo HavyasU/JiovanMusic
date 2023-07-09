@@ -171,3 +171,11 @@ rateusbtndiv.addEventListener("click",()=>{
               </div>
   `
 })
+
+// *******************************************
+
+let homebtndiv = document.getElementById('home-btn-div');
+homebtndiv.addEventListener("click",()=>{
+    homepage();
+    document.getElementsByClassName('sortbuttons')[0].style.display="flex";
+})

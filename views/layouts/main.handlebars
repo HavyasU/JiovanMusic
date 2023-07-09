@@ -51,10 +51,11 @@
             </div>
         </nav>
 
+
         <nav class="navbar bg-body-tertiary">
 
-            <div class="container-fluid">
-                <a class="navbar-brand mb-0 h1" href="/"><i class="fa-solid fa-home"></i> &nbsp;&nbsp;&nbsp;<b>Home</b></a>
+            <div class="container-fluid" id="home-btn-div">
+                <a class="navbar-brand mb-0 h1" ><i class="fa-solid fa-home"></i> &nbsp;&nbsp;&nbsp;<b>Home</b></a>
             </div>
         </nav>
 
@@ -131,10 +132,13 @@
                         <i class="fa-solid fa-forward-step"  id="down-next-btn"></i>
                     </span>
                     <span>
-                        <i class="fa-solid fa-forward"></i>
+                        <i class="fa-solid fa-forward" ></i>
+                    </span>
+                    <span >
+                        <i class="fa-solid fa-download" id="down-download-btn"></i>
                     </span>
                     <span>
-                        <i class="fa-sharp fa-regular fa-heart" id="like-btn" onclick="like()"></i>
+                        <i class="fa-sharp fa-regular fa-heart" id="like-btn" ></i>
                     </span>
                 </div>
             </div>
@@ -145,6 +149,7 @@
 <script src="js/main.js" crossorigin="anonymous"></script>
 <script src="js/downandmenu.js" crossorigin="anonymous"></script>
 <script src="js/albumsearch.js" crossorigin="anonymous"></script>
+<script src="js/downloader.js" crossorigin="anonymous"></script>
 <script>
     let listbtn =document.getElementById('listbtn');
       listbtn.addEventListener("click",()=>{

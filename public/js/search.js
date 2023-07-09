@@ -211,8 +211,8 @@ if (input) {
             id = input.value;
             document.getElementById('s-songs').innerHTML = " "
             document.getElementById('s-album').innerHTML = " "
-            // fetchdata('songs', id);
-            // fetchdata('playlists', id);
+            fetchdata('songs', id);
+            fetchdata('playlists', id);
             fetchalbumdata(id);
         }
     })

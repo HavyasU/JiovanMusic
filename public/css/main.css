@@ -36,6 +36,7 @@ body {
   border-radius: 4px;
   margin-right: 2rem;
   box-shadow: 0 0 10px rgb(255, 253, 253);
+  box-shadow: 0 0 10px rgb(54, 50, 50);
   cursor: pointer;
 }
 .button-active ,.s-button:hover
@@ -44,6 +45,7 @@ body {
   color: rgb(0, 0, 0);
   box-shadow: 0 0 10px rgb(70, 209, 255);
   border: 2px solid rgb(255, 255, 255);
+  box-shadow: 0 0 10px rgb(54, 50, 50);
 }
 .n-nav{
   width:90%;

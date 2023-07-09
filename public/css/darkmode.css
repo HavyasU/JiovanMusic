@@ -72,8 +72,14 @@ background-color: white;
 .s-button 
 {
    background-color:#ced4da;
+   box-shadow: 0 0 10px rgb(109, 109, 109);
 }
 .album-card-container
 {
     background-color: transparent;
+}
+.button-active, .s-button:hover
+{
+    background-color: rgb(97, 228, 207);
+    box-shadow: 0 0 20px rgb(255, 255, 255);
 }
