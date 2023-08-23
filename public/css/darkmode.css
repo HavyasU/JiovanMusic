@@ -65,8 +65,11 @@ background-color: white;
 }
 .down-player
 {
-    color: white;
-    box-shadow: 0 -10px 20px rgb(0, 0, 0);
+    background-color: rgba(150, 148, 148, 0.8); /* Transparent background */
+    color: black;
+}
+.down-controls span:hover{
+    background-color: rgb(199, 196, 196);
 }
 .s-button 
 {
@@ -82,3 +85,13 @@ background-color: white;
     background-color: rgb(97, 228, 207);
     box-shadow: 0 0 20px rgb(255, 255, 255);
 }
+#footer {
+    background-color: rgb(101, 97, 97);
+    padding: 20px;
+    color: rgb(0, 0, 0);
+    margin-bottom: 10rem;
+    & a
+    {
+      color: rgb(0, 0, 0);
+    }
+  }

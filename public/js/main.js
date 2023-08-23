@@ -129,7 +129,8 @@ let rateusbtndiv = document.getElementById('rate-btn-div');
 
 rateusbtndiv.addEventListener("click",()=>{
     document.getElementsByClassName('sortbuttons')[0].style.display="none";
-
+    
+    loadalbum(null);
     albumcardcontainer.innerHTML=""
     albumcardcontainer.innerHTML=`
   
@@ -196,3 +197,14 @@ homebtndiv.addEventListener("click",()=>{
     console.log("home clicked")
     document.getElementsByClassName('sortbuttons')[0].style.display="flex";
 })
+// setInterval(()=>{
+//     if(document.getElementsByClassName('a-back-btn'))
+//     {
+//         let al_bk_btn = document.getElementsByClassName('a-back-btn');
+//         if(al_bk_btn){
+//         al_bk_btn[0].addEventListener("click", () => {
+//         albumpop.classList.remove('active');
+//     })
+//     }
+// }
+// },1000)

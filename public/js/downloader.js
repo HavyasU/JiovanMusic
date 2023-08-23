@@ -28,6 +28,6 @@ const downloadsong=(songlink,songname)=>
         // Example usage
         // var fileUrl = 'https://aac.saavncdn.com/371/4715fb389008f164e355a99dffa24a46_12.mp4';
         let fileUrl = songlink;
-        let fileName = `${songname}.mp4`;
+        let fileName = `${songname}.mp3`;
         createFileFromUrl(fileUrl, fileName);
 }

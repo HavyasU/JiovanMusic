@@ -296,8 +296,7 @@ body {
     width: 80%;
     display: grid; 
     grid-template-columns: auto auto auto auto;
-    margin: 8rem auto;
-    padding: 1rem 0;
+    margin: 8rem auto 0rem;
     justify-content: center; 
     transition: all .5s cubic-bezier(0.165, 0.84, 0.44, 1);
 }

@@ -115,9 +115,15 @@ h1{
   font-size: 1.3rem;
 }
 
-footer {
+#footer {
   background-color: rgb(101, 97, 97);
   padding: 20px;
+  color: rgb(255, 251, 251);
+  margin-bottom: 10rem;
+  & a
+  {
+    color: rgb(255, 255, 255);
+  }
 }
 
 .footer-container {
@@ -133,49 +139,44 @@ footer {
 }
 
 .social-links a {
-  color: #333;
   text-decoration: none;
   margin-right: 10px;
   transition: color 0.3s ease;
-  color: white;
 }
 
 .social-links a:hover {
   color: #007bff;
 }
-
+#copyright
+{
+  color: #00eaff;
+}
 .api a,
 .api p :hover {
   color: #007bff;
 }
 
 .sources h2 {
-  color: white;
   margin: 0;
   font-size: 18px;
 }
 
 .api {
-  color: white;
   margin-bottom: 10px;
 }
 
 .api h4 {
-  color: white;
   margin: 0;
   font-size: 16px;
   font-weight: bold;
 }
 
 .api p {
-  color: white;
   margin: 0;
   font-size: 14px;
 }
 
 .api a {
-  color: white;
-  color: #333;
   text-decoration: none;
   transition: color 0.3s ease;
 }

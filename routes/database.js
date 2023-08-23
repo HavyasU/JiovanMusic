@@ -19,7 +19,6 @@ let reviewschema = mongoose.Schema({
   Review:String
 })
 let reviews = mongoose.model('reviews',reviewschema)
-
 let userreview ;
 dsroute.post('/RateUs',(req,res)=>{
   userreview =  new reviews( 

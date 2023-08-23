@@ -122,3 +122,7 @@ img {
     border: 2px solid white;
     box-shadow: 0 0 5px white;
 } */
+body{
+    height:auto;
+    padding-bottom:1rem;
+}

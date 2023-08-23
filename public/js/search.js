@@ -223,6 +223,11 @@ sbtn.addEventListener("click", () => {
     if (ssong)
         ssong.pause();
     id = input.value;
+    document.getElementById('s-songs').innerHTML = " "
+            document.getElementById('s-album').innerHTML = " "
+            fetchdata('songs', id);
+            fetchdata('playlists', id);
+            fetchalbumdata(id);
 })
 let sprebn = document.getElementsByClassName('prebtn');
 sprebn = [...sprebn];

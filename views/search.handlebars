@@ -1,55 +1,55 @@
 <div id="search-page">
-<div class="inp-container">
-    <input type="text" name="s-name" id="s-name" placeholder="Enter Song Name/Link" />
-    <button id="search-btn" type="button">
-        <i class="fa-solid fa-magnifying-glass fa-xl" style="color: #ffffff; font-weight:1000;"></i>
-    </button>
-</div>
-{{!-- <div class="suggest-div">
-    <button class="suggest">Trending</button>
-    <button class="suggest">Latest</button>
-    <button class="suggest">Lofi</button>
-    <button class="suggest">Remix</button>
-    <button class="suggest">Kannada</button>
-</div> --}}
-<div id="s-songs">
+    <div class="inp-container">
+        <input type="text" name="s-name" id="s-name" placeholder="Search here.." />
+        <button id="search-btn" type="button">
+            <i class="fa-solid fa-magnifying-glass fa-xl" style="color: #ffffff; font-weight:1000;"></i>
+        </button>
+    </div>
+    {{!-- <div class="suggest-div">
+        <button class="suggest">Trending</button>
+        <button class="suggest">Latest</button>
+        <button class="suggest">Lofi</button>
+        <button class="suggest">Remix</button>
+        <button class="suggest">Kannada</button>
+    </div> --}}
+    <div id="s-songs">
 
-</div>
-<div class="popup-div">
-    <div class="player">
-        <div class="u-btn">
-            <div class="back-btn">
-                <i class="fa-solid fa-arrow-left"></i>
+    </div>
+    <div class="popup-div">
+        <div class="player">
+            <div class="u-btn">
+                <div class="back-btn">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </div>
             </div>
-        </div>
-        <div class="player-img">
-            <div class="img-div">
-                <img src="./image2.jpg" alt="image" id="player-img">
+            <div class="player-img">
+                <div class="img-div">
+                    <img src="./image2.jpg" alt="image" id="player-img">
+                </div>
             </div>
-        </div>
-        <div class="player-details">
-            <h1>Onde Usiranthe</h1>
-            <h3>Rajesh Krishnan</h3>
-            <!-- <h3>Vijay Preakash</h3> -->
-        </div>
-        <div class="controls">
-            <div class="input-range">
-                <audio src="https://aac.saavncdn.com/903/f8ef6c593dd5689cf59ff681c6cc83c6_48.mp4"
-                    style="display: block;"></audio>
-                <input type="range" name="" id="range" value="0">
+            <div class="player-details">
+                <h1>Onde Usiranthe</h1>
+                <h3>Rajesh Krishnan</h3>
+                <!-- <h3>Vijay Preakash</h3> -->
             </div>
-            <div class="duration">
-                <p id="c-duration">00.00</p>
-                <p id="t-duration">00.00</p>
-            </div>
-            <div class="player-btn" id="play-div">
-                <div class="play-btn prebtn" ><i class="fa-solid fa-backward "></i></div>
-                <div class="play-btn " id="play-btn"><i class="fa-solid fa-2xl fa-play"></i></div>
-                <div class="play-btn nextbtn"><i class="fa-solid fa-forward"></i></div>
+            <div class="controls">
+                <div class="input-range">
+                    <audio src="https://aac.saavncdn.com/903/f8ef6c593dd5689cf59ff681c6cc83c6_48.mp4"
+                        style="display: block;"></audio>
+                    <input type="range" name="" id="range" value="0">
+                </div>
+                <div class="duration">
+                    <p id="c-duration">00.00</p>
+                    <p id="t-duration">00.00</p>
+                </div>
+                <div class="player-btn" id="play-div">
+                    <div class="play-btn prebtn"><i class="fa-solid fa-backward "></i></div>
+                    <div class="play-btn " id="play-btn"><i class="fa-solid fa-2xl fa-play"></i></div>
+                    <div class="play-btn nextbtn"><i class="fa-solid fa-forward"></i></div>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<script src="js/main.js"></script>
+    <script src="js/main.js"></script>
 </div>
