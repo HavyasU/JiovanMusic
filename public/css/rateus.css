@@ -319,3 +319,13 @@ a {
     font-size: 2rem;
     
 }
+*
+{
+    transition:none;
+}
+.album-card-container
+{
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+}

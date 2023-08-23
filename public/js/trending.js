@@ -135,6 +135,9 @@ const homepage = async () => {
     let data = await res.json();
     // console.log(data)
     loadalbum(data.data);
+    albumaddbtn.forEach((ele) => {
+        ele.classList.remove('button-active')
+    })
     albumaddbtn.classList.add('button-active')
     albumaddbtn.addEventListener("click", () => {
         loadalbum(data.data);
@@ -196,10 +199,10 @@ function addplaylist(e, index, data) {
             <h4>${e.songCount} Songs</h4>
             <p class="hidden">${e.id}</p>
         </div>`;
-        setTimeout(()=>{
-       albumcardcontainer.appendChild(li);
-    },2000)
-    console.log(index+1 ,data.playlists.length - 1)
+    setTimeout(() => {
+        albumcardcontainer.appendChild(li);
+    }, 2000)
+    console.log(index + 1, data.playlists.length - 1)
     if ((index + 1) > data.playlists.length - 1) {
         addevent("playlist");
     }
@@ -218,7 +221,7 @@ function addchart(e, index, data) {
             <p class="hidden">${e.id}</p>
         </div>`;
 
-     albumcardcontainer.appendChild(li)
+    albumcardcontainer.appendChild(li)
     if ((index + 1) > data.charts.length - 1) {
         // console.log("data is "+ data)
         // console.log(data.charts)
@@ -230,7 +233,7 @@ function setalbum(pdata) {
 
     console.log("welcome")
     console.log(pdata)
-    
+
     let div = document.createElement('div')
     div.innerHTML = `   
         <div class="button">
@@ -277,7 +280,7 @@ function setalbum(pdata) {
             addevent("songs", pdata.data.songs, index)
         }
     })
-    
+
     albumpop.classList.add('active');
 }
 const albumpopups = async (id) => {
@@ -292,19 +295,19 @@ const albumpopups = async (id) => {
 }
 function addevent(id, songdata) {
     if (id == "playlist") {
-        setTimeout(()=>{
-        
-        let cardalbum = document.getElementsByClassName('card-album');
-        cardalbum = [...cardalbum];
-            
-    
-        console.log(cardalbum)
-        cardalbum.forEach((e, index) => {
-            e.addEventListener("click", () => {
-                albumpopups(e.lastElementChild.lastElementChild.innerHTML)
+        setTimeout(() => {
+
+            let cardalbum = document.getElementsByClassName('card-album');
+            cardalbum = [...cardalbum];
+
+
+            console.log(cardalbum)
+            cardalbum.forEach((e, index) => {
+                e.addEventListener("click", () => {
+                    albumpopups(e.lastElementChild.lastElementChild.innerHTML)
+                })
             })
-        })
-    },2000)
+        }, 2000)
     }
     if (id == "albums") {
         console.log("album events added")
@@ -332,10 +335,10 @@ function addevent(id, songdata) {
         albumsong.forEach((e, index) => {
             downsongarray[index] = songdata[index];
             e.addEventListener("click", (ele) => {
-                addtodown(songdata[index], index,songdata);
+                addtodown(songdata[index], index, songdata);
             })
         })
-        
+
     }
     if (id == "charts") {
 
@@ -351,20 +354,28 @@ function addevent(id, songdata) {
     }
 }
 const loadalbum = (data) => {
+    if (data == null) {
+        return;
+    }
+    else {
 
-    let dataarray;
-    dataarray = data;
-    albumcardcontainer.innerHTML = " "
-    data.playlists.forEach((e, index) => {
-        if (e.songCount > 0)
-            addplaylist(e, index, dataarray);
-    })
-    // if (data) 
-    // data.albums.forEach((e, index) => {
-    //         console.log(e)
-    //         if (e.songCount > 0)
-    //             addalbum(e)
-    //     })
+        let dataarray;
+        dataarray = data;
+        albumcardcontainer.innerHTML = " "
+        if (data) {
+            data.playlists.forEach((e, index) => {
+                if (e.songCount > 0)
+                    addplaylist(e, index, dataarray);
+            })
+        }
+        // if (data) 
+        // data.albums.forEach((e, index) => {
+        //         console.log(e)
+        //         if (e.songCount > 0)
+        //             addalbum(e)
+        //     })
+
+    }
 }
 const loadchart = (data) => {
     let dataarray;

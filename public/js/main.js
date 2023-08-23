@@ -58,7 +58,7 @@ searchbtndiv.addEventListener("click",()=>{
     albumcardcontainer.style.display="flex";
     albumcardcontainer.style.flexWrap="wrap";
     document.getElementsByClassName('sortbuttons')[0].style.display="none";
-
+    loadalbum(null);
   albumcardcontainer.innerHTML=""
   albumcardcontainer.innerHTML=`
 
@@ -130,8 +130,8 @@ let rateusbtndiv = document.getElementById('rate-btn-div');
 rateusbtndiv.addEventListener("click",()=>{
     document.getElementsByClassName('sortbuttons')[0].style.display="none";
 
-  albumcardcontainer.innerHTML=""
-  albumcardcontainer.innerHTML=`
+    albumcardcontainer.innerHTML=""
+    albumcardcontainer.innerHTML=`
   
   <link rel="stylesheet" href="css/rateus.css">
   <link rel="stylesheet" href="css/rateus-mob.css">
@@ -193,5 +193,6 @@ rateusbtndiv.addEventListener("click",()=>{
 let homebtndiv = document.getElementById('home-btn-div');
 homebtndiv.addEventListener("click",()=>{
     homepage();
+    console.log("home clicked")
     document.getElementsByClassName('sortbuttons')[0].style.display="flex";
 })
