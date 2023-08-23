@@ -128,8 +128,6 @@ searchbtndiv.addEventListener("click",()=>{
 let rateusbtndiv = document.getElementById('rate-btn-div');
 
 rateusbtndiv.addEventListener("click",()=>{
-    albumcardcontainer.style.display="flex";
-    albumcardcontainer.style.flexWrap="wrap";
     document.getElementsByClassName('sortbuttons')[0].style.display="none";
 
   albumcardcontainer.innerHTML=""
@@ -170,6 +168,24 @@ rateusbtndiv.addEventListener("click",()=>{
                       </div>
               </div>
   `
+  let script = document.createElement('script');
+  script.innerText = `
+  document.getElementById('submit-review').addEventListener("click", () => {
+      var rating = document.querySelector('input[name="rating"]:checked').value;
+      let totalrate = document.getElementById('totalrate');
+      totalrate.innerHTML = rating;
+  })
+
+
+  let form = document.getElementById('container');
+  form.addEventListener("submit", () => {
+      document.getElementById("popup").classList.add('popup-active')
+  })
+  let popup = document.getElementById('popup');
+  popup.addEventListener("click", () => {
+      popup.classList.remove('popup-active')
+   }) `
+   document.appendChild(script)
 })
 
 // *******************************************
